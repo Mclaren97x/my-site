@@ -13,12 +13,13 @@ hero:
   primary_button: Book a shoot
   secondary_button: See the work
 highlights:
-  - title: Rolling
+  - title: Rollers
     text: car-to-car motion shots
   - title: Static
     text: location & night shoots
   - title: Details
-    text: wheels, interiors, engine bays
+    text: wheels, interiors, engine bays, the little things that makes your car
+      special
   - title: Events
     text: meets, shows & track days
 gallery:
