@@ -449,12 +449,12 @@ h1, h2, h3 {
   gap: 64px;
   align-items: center;
 }
+/* Shown at the photo's own 2:3 shape, never cropped or stretched */
 .about-photo {
   width: 100%;
+  max-width: 460px;
   height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 30%;
+  justify-self: center;
   border-radius: var(--radius);
   background-color: var(--surface);
   box-shadow: 18px 18px 0 -2px var(--accent);
