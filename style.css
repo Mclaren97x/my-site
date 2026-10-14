@@ -121,6 +121,8 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
+.logo img { height: 62px; width: auto; }
+.site-footer .logo img { height: 60px; }
 .logo em { font-style: italic; color: var(--accent); }
 .logo-mark {
   width: 26px;
@@ -470,6 +472,36 @@ h1, h2, h3 {
   align-items: start;
 }
 .contact-info { display: flex; flex-direction: column; gap: 12px; }
+.contact-profile {
+  position: relative;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 12px 12px 0 -2px var(--accent);
+}
+.contact-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.contact-profile::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0 0;
+  background: linear-gradient(to top, rgba(5, 5, 6, 0.95) 15%, transparent);
+}
+.contact-logo {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  z-index: 1;
+  width: 78%;
+  height: auto;
+  transform: translateX(-50%);
+}
 .contact-card {
   display: flex;
   align-items: center;
@@ -491,7 +523,7 @@ h1, h2, h3 {
   letter-spacing: 0.15em;
   color: var(--muted);
 }
-.contact-card strong { font-weight: 600; overflow-wrap: anywhere; }
+.contact-card strong { font-weight: 600; font-size: clamp(0.92rem, 3.6vw, 1rem); }
 .contact-note { color: var(--muted); font-size: 0.92rem; margin: 8px 0 0; }
 
 .contact-form {
@@ -615,6 +647,8 @@ h1, h2, h3 {
 @media (max-width: 760px) {
   :root { --header-h: 64px; }
   .nav { padding: 0 16px; }
+  .site-header .logo img { height: 52px; }
+  .contact-profile { max-width: 420px; }
   .nav-toggle { display: flex; }
   .nav-links {
     position: fixed;
