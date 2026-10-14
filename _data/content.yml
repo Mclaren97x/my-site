@@ -12,7 +12,7 @@ hero:
     shops, dealerships and events.
   primary_button: Book a shoot
   secondary_button: See the work
-  background: /images/hero.jpg
+  background: /images/hero-track.jpg
 highlights:
   - title: Rollers
     text: car-to-car motion shots
