@@ -14,8 +14,7 @@ Drop your photos in this folder with these exact names and they appear on the si
 | `gallery-7.jpg` | Gallery (Rolling) | Any |
 | `gallery-8.jpg` | Gallery (Events) | Any |
 | `gallery-9.jpg` | Gallery (Details) | Any |
-| `about.jpg` | About section | Portrait (4:5) |
-| `me.jpg` | Contact section photo (already added) | Portrait |
+| `me.jpg` | About and Contact section photo (already added) | Portrait |
 | `logo.png` / `logo-small.png` | Contact section and header/footer logo (already added) | White on transparent |
 
 Export at around 2000px on the long edge and 80% JPEG quality so the site stays fast.
