@@ -126,6 +126,9 @@ form.addEventListener("submit", async (e) => {
   try {
     const res = await fetch(FORM_ENDPOINT, {
       method: "POST",
+      // FormSubmit treats each referring page address as a separate form needing activation.
+      // Sending only the site origin keeps one activation valid for every page, query string or hash.
+      referrerPolicy: "origin",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(payload),
     });
