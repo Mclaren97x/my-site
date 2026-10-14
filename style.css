@@ -479,12 +479,10 @@ h1, h2, h3 {
   border: 1px solid var(--line);
   box-shadow: 12px 12px 0 -2px var(--accent);
 }
+/* Shown at the photo's own 2:3 shape, never cropped or stretched */
 .contact-photo {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 30%;
 }
 .contact-profile::after {
   content: "";
