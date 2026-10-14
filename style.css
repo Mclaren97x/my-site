@@ -5,8 +5,8 @@
   --line: #2a2a2e;
   --text: #f2f2f0;
   --muted: #9a9aa0;
-  --accent: #ff3b1f;
-  --accent-2: #ffb21f;
+  --accent: #2e7bff;
+  --accent-2: #ffffff;
   --display: "Barlow Condensed", "Arial Narrow", sans-serif;
   --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --max: 1200px;
@@ -82,7 +82,7 @@ h1, h2, h3 {
   clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
   padding-right: 36px;
 }
-.btn-primary:hover { background: #ff5a3f; }
+.btn-primary:hover { background: #4f91ff; }
 .btn-ghost { border-color: rgba(255, 255, 255, 0.4); color: #fff; }
 .btn-ghost:hover { border-color: #fff; }
 
@@ -192,8 +192,8 @@ h1, h2, h3 {
   background-image:
     linear-gradient(90deg, rgba(11, 11, 12, 0.92) 0%, rgba(11, 11, 12, 0.55) 55%, rgba(11, 11, 12, 0.2) 100%),
     url("images/hero.jpg"),
-    repeating-linear-gradient(-20deg, transparent 0 60px, rgba(255, 59, 31, 0.06) 60px 62px),
-    radial-gradient(ellipse at 75% 60%, #3a1a14 0%, #160d0b 45%, var(--bg) 80%);
+    repeating-linear-gradient(-20deg, transparent 0 60px, rgba(46, 123, 255, 0.07) 60px 62px),
+    radial-gradient(ellipse at 75% 60%, #122a52 0%, #0b1424 45%, var(--bg) 80%);
   background-size: cover;
   background-position: center;
   transform: scale(1.05);
@@ -321,7 +321,7 @@ h1, h2, h3 {
   gap: 12px;
 }
 .shot {
-  --ph: linear-gradient(135deg, #2a1611, #0f0f11 70%);
+  --ph: linear-gradient(135deg, #14243f, #0f0f11 70%);
   position: relative;
   margin: 0;
   border-radius: var(--radius);
@@ -337,7 +337,7 @@ h1, h2, h3 {
   transition: transform 0.4s ease, opacity 0.3s;
 }
 .shot:nth-child(3n+2) { --ph: linear-gradient(160deg, #13202a, #0d0d10 70%); }
-.shot:nth-child(3n) { --ph: linear-gradient(110deg, #2a2312, #0e0e10 70%); }
+.shot:nth-child(3n) { --ph: linear-gradient(110deg, #22252b, #0e0e10 70%); }
 .shot.wide { grid-column: span 2; }
 .shot.tall { grid-row: span 2; }
 .shot::after {
@@ -453,7 +453,7 @@ h1, h2, h3 {
   background-image:
     url("images/about.jpg"),
     repeating-linear-gradient(-20deg, transparent 0 40px, rgba(255, 255, 255, 0.03) 40px 41px),
-    linear-gradient(150deg, #2a1611, #0f0f11 70%);
+    linear-gradient(150deg, #14243f, #0f0f11 70%);
   background-size: cover;
   background-position: center;
   box-shadow: 18px 18px 0 -2px var(--accent);
