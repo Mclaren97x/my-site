@@ -1,0 +1,76 @@
+---
+layout: default
+title: Packages
+description: Automotive photo shoot packages and add-ons from Speed Of Photography.
+permalink: /packages/
+# Text comes from the "packages" section of _data/content.yml (edit it in Pages CMS).
+---
+{%- assign c = site.data.content -%}
+{%- assign base = site.baseurl -%}
+{%- assign pk = c.packages -%}
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">{{ pk.eyebrow | escape }}</p>
+        <h1>{{ pk.heading | escape }}</h1>
+        <p class="section-sub">{{ pk.intro | escape }}</p>
+      </div>
+    </section>
+
+    <section class="section packages-section" aria-label="Packages">
+      <div class="packages">
+        {%- for p in pk.items %}
+        <article class="package">
+          <span class="service-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+          <h2>{{ p.name | escape }}</h2>
+          <ul class="features">
+            {%- for f in p.features %}
+            <li>{{ f | escape }}</li>
+            {%- endfor %}
+          </ul>
+          <a href="{{ base }}/?package={{ p.name | url_encode }}#contact" class="btn btn-primary">{{ pk.button | escape }}</a>
+        </article>
+        {%- endfor %}
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="addons-heading">
+      <div class="section-head">
+        <p class="eyebrow">Extras</p>
+        <h2 id="addons-heading">{{ pk.addons_heading | escape }}</h2>
+        <p class="section-sub">{{ pk.addons_intro | escape }}</p>
+      </div>
+      <div class="addons">
+        {%- for a in pk.addons %}
+        <article class="addon">
+          <span class="addon-icon" aria-hidden="true">
+            {%- case a.icon -%}
+            {%- when "location" -%}<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            {%- when "rush" -%}<svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M13 8l-3 5h4l-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 3h4" stroke="currentColor" stroke-width="1.6"/></svg>
+            {%- when "photos" -%}<svg viewBox="0 0 24 24"><rect x="6" y="3" width="15" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 7v12a1.5 1.5 0 0 0 1.5 1.5H17" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 13l3.5-4 3 3 2-2 2.5 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            {%- when "usb" -%}<svg viewBox="0 0 24 24"><rect x="4" y="9" width="12" height="8" rx="1.5" transform="rotate(-45 10 13)" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15 4l5 5-2.5 2.5-5-5z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            {%- else -%}<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg>
+            {%- endcase -%}
+          </span>
+          <h3>{{ a.name | escape }}</h3>
+          <p>{{ a.text | escape }}</p>
+        </article>
+        {%- endfor %}
+      </div>
+
+      {%- if pk.notes.size > 0 %}
+      <div class="notes">
+        <h3>{{ pk.notes_heading | escape }}</h3>
+        <ul>
+          {%- for n in pk.notes %}
+          <li>{{ n | escape }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+    </section>
+
+    <section class="section cta-band">
+      <h2>{{ pk.cta_heading | escape }}</h2>
+      <p class="section-sub">{{ pk.cta_text | escape }}</p>
+      <a href="{{ base }}/#contact" class="btn btn-primary">{{ pk.cta_button | escape }}</a>
+    </section>

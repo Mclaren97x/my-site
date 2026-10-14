@@ -1,5 +1,7 @@
+// Shared by every page; sections that aren't on the current page are skipped.
+const form = document.getElementById("contact-form");
 // The address the contact form sends inquiries to (set in the content file, read from the form).
-const CONTACT_EMAIL = document.getElementById("contact-form").dataset.email;
+const CONTACT_EMAIL = form ? form.dataset.email : "";
 // FormSubmit (formsubmit.co) emails each booking to CONTACT_EMAIL. No account needed:
 // the very first submission sends an "Activate" email to that inbox, which must be clicked once.
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
@@ -40,6 +42,7 @@ document.querySelectorAll(".filter").forEach((btn) => {
 
 // ---------- Lightbox ----------
 const lightbox = document.getElementById("lightbox");
+if (lightbox) {
 const lbImg = lightbox.querySelector(".lightbox-img");
 const lbCaption = lightbox.querySelector(".lightbox-caption");
 let current = 0;
@@ -91,9 +94,17 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") show(current - 1);
   if (e.key === "ArrowRight") show(current + 1);
 });
+}
 
 // ---------- Contact form (emails each booking to CONTACT_EMAIL) ----------
-const form = document.getElementById("contact-form");
+if (form) {
+// "Book this package" links arrive as /?package=Name#contact: preselect that shoot type.
+const requested = new URLSearchParams(location.search).get("package");
+if (requested) {
+  const opt = [...form.type.options].find((o) => o.value.toLowerCase() === requested.toLowerCase());
+  if (opt) form.type.value = opt.value;
+}
+
 const submitBtn = form.querySelector('button[type="submit"]');
 const statusEl = document.getElementById("form-status");
 
@@ -113,6 +124,7 @@ form.addEventListener("submit", async (e) => {
     email: data.get("email"),
     car: data.get("car") || "Not given",
     shoot_type: data.get("type"),
+    add_ons: data.getAll("addons").join(", ") || "None",
     details: data.get("message") || "None",
     _subject: subject,
     _template: "table",
@@ -148,9 +160,10 @@ form.addEventListener("submit", async (e) => {
     submitBtn.textContent = submitBtn.dataset.label;
   }
 });
+}
 
 // ---------- Reveal sections on scroll ----------
-const revealTargets = document.querySelectorAll(".section-head, .gallery, .service, .process li, .about-photo, .about-text, .contact-info, .contact-form");
+const revealTargets = document.querySelectorAll(".section-head, .gallery, .service, .process li, .about-photo, .about-text, .contact-info, .contact-form, .package, .addon, .notes");
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

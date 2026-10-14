@@ -673,3 +673,135 @@ h1, h2, h3 {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Packages page ---------- */
+.nav-links a[aria-current="page"] { color: var(--accent); }
+.section-cta { margin-top: 40px; }
+
+.page-hero {
+  position: relative;
+  padding: calc(var(--header-h) + 72px) 24px 24px;
+  background:
+    repeating-linear-gradient(-20deg, transparent 0 60px, rgba(46, 123, 255, 0.06) 60px 62px),
+    radial-gradient(ellipse at 80% 0%, #122a52 0%, #0b1424 40%, var(--bg) 75%);
+}
+.page-hero-inner { max-width: var(--max); margin: 0 auto; }
+.page-hero h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); font-style: italic; }
+.packages-section { padding-top: 48px; }
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.package {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 26px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  transition: transform 0.3s, border-color 0.3s;
+}
+.package:hover { transform: translateY(-4px); border-color: #3a3a40; border-top-color: var(--accent); }
+.package h2 { font-size: 2rem; margin: 16px 0 20px; }
+.features { list-style: none; margin: 0 0 28px; padding: 0; flex: 1; }
+.features li {
+  position: relative;
+  padding: 9px 0 9px 28px;
+  border-bottom: 1px solid var(--line);
+  color: #d4d4d8;
+  font-size: 0.95rem;
+}
+.features li:last-child { border-bottom: 0; }
+.features li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 15px;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+}
+.package .btn { align-self: flex-start; }
+
+.addons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.addon {
+  padding: 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.addon-icon { display: inline-flex; width: 44px; height: 44px; color: var(--accent); }
+.addon-icon svg { width: 100%; height: 100%; }
+.addon h3 { font-size: 1.5rem; margin: 16px 0 8px; }
+.addon p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+.notes {
+  margin-top: 40px;
+  padding: 28px 28px 20px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.notes h3 { font-size: 1.5rem; margin-bottom: 12px; }
+.notes ul { margin: 0; padding-left: 20px; color: #c3c3c7; }
+.notes li { margin-bottom: 8px; }
+.notes li::marker { color: var(--accent); }
+
+.cta-band { text-align: center; }
+.cta-band h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+.cta-band .section-sub { margin: 16px auto 28px; }
+
+/* Add-on checkboxes in the booking form */
+.addon-choices { border: 0; margin: 0; padding: 0; display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; }
+.addon-choices legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.92rem;
+  transition: border-color 0.2s;
+}
+.addon-choices legend { width: 100%; }
+.field .check {
+  font-family: var(--body);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text);
+}
+.check:hover { border-color: var(--muted); }
+.check input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+.check:has(input:checked) { border-color: var(--accent); }
+
+@media (max-width: 960px) {
+  .packages, .addons { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .page-hero { padding: calc(var(--header-h) + 48px) 16px 8px; }
+  .packages, .addons { grid-template-columns: 1fr; }
+  .notes { padding: 22px 18px 14px; }
+}

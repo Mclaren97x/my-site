@@ -1,0 +1,54 @@
+{%- assign c = site.data.content -%}
+{%- assign base = site.baseurl -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }} | {{ c.business_name | escape }}{% else %}{{ c.seo_title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ c.seo_description | escape }}{% endif %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ base }}/style.css?v=7">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="{{ base }}/" class="logo" aria-label="{{ c.business_name | escape }} home">
+        <img src="{{ base }}{{ c.logo }}" alt="{{ c.business_name | escape }}" width="480" height="144">
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="{{ base }}/#work">Work</a></li>
+        <li><a href="{{ base }}/#services">Services</a></li>
+        <li><a href="{{ base }}/packages/"{% if page.url == "/packages/" %} aria-current="page"{% endif %}>Packages</a></li>
+        <li><a href="{{ base }}/#about">About</a></li>
+        <li><a href="{{ base }}/#contact" class="nav-cta">{{ c.hero.primary_button | escape }}</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+{{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="{{ base }}/" class="logo" aria-label="{{ c.business_name | escape }} home">
+        <img src="{{ base }}{{ c.logo }}" alt="{{ c.business_name | escape }}" width="480" height="144">
+      </a>
+      <ul class="socials">
+        <li><a href="{{ base }}/packages/">Packages</a></li>
+        <li><a href="{{ c.contact.instagram_url | escape }}" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="mailto:{{ c.contact.email | escape }}">Email</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="year"></span> {{ c.business_name | escape }}</p>
+    </div>
+  </footer>
+
+  <script src="{{ base }}/script.js?v=5"></script>
+</body>
+</html>

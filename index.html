@@ -1,40 +1,9 @@
 ---
+layout: default
 # Text and photos come from _data/content.yml (edit it in Pages CMS).
 ---
 {%- assign c = site.data.content -%}
 {%- assign base = site.baseurl -%}
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ c.seo_title | escape }}</title>
-  <meta name="description" content="{{ c.seo_description | escape }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
-</head>
-<body>
-  <header class="site-header">
-    <nav class="nav">
-      <a href="#top" class="logo" aria-label="{{ c.business_name | escape }} home">
-        <img src="{{ base }}{{ c.logo }}" alt="{{ c.business_name | escape }}" width="480" height="144">
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul id="nav-links" class="nav-links">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="nav-cta">{{ c.hero.primary_button | escape }}</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="top">
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"{% if c.hero.background and c.hero.background != "" %} style="--hero-img:url('{{ base }}{{ c.hero.background }}')"{% endif %}></div>
       <div class="hero-content">
@@ -93,6 +62,9 @@
           <p>{{ s.text | escape }}</p>
         </article>
         {%- endfor %}
+      </div>
+      <div class="section-cta">
+        <a href="{{ base }}/packages/" class="btn btn-primary">{{ c.packages.home_button | default: "See packages" | escape }}</a>
       </div>
     </section>
 
@@ -167,6 +139,14 @@
             {%- endfor %}
           </select>
         </div>
+        {%- if c.packages.addons.size > 0 %}
+        <fieldset class="field field-full addon-choices">
+          <legend>Add-ons (optional)</legend>
+          {%- for a in c.packages.addons %}
+          <label class="check"><input type="checkbox" name="addons" value="{{ a.name | escape }}"><span>{{ a.name | escape }}</span></label>
+          {%- endfor %}
+        </fieldset>
+        {%- endif %}
         <div class="field field-full">
           <label for="message">Details</label>
           <textarea id="message" name="message" rows="5" placeholder="Location, dates, the look you're going for..."></textarea>
@@ -177,21 +157,6 @@
       </form>
       </div>
     </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <a href="#top" class="logo" aria-label="{{ c.business_name | escape }} home">
-        <img src="{{ base }}{{ c.logo }}" alt="{{ c.business_name | escape }}" width="480" height="144">
-      </a>
-      <ul class="socials">
-        <li><a href="{{ c.contact.instagram_url | escape }}" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="mailto:{{ c.contact.email | escape }}">Email</a></li>
-      </ul>
-      <p class="copyright">&copy; <span id="year"></span> {{ c.business_name | escape }}</p>
-    </div>
-  </footer>
-
   <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox-close" aria-label="Close">&times;</button>
     <button class="lightbox-prev" aria-label="Previous photo">&#8249;</button>
@@ -200,6 +165,3 @@
     <p class="lightbox-caption"></p>
   </div>
 
-  <script src="script.js?v=4"></script>
-</body>
-</html>

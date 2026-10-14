@@ -116,6 +116,47 @@ content:
           - { name: paragraphs, label: Paragraphs, type: text, list: true }
           - { name: button, label: Button text, type: string }
 
+      - name: packages
+        label: Packages page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: intro, label: Intro text, type: text }
+          - { name: home_button, label: Home page button text (under Services), type: string }
+          - { name: button, label: Button text on each package, type: string }
+          - name: items
+            label: Packages (no prices are shown on the site)
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Package name (also used in the booking form), type: string }
+              - { name: features, label: What's included, type: string, list: true }
+          - { name: addons_heading, label: Add-ons heading, type: string }
+          - { name: addons_intro, label: Add-ons intro text, type: text }
+          - name: addons
+            label: Add-ons (also shown as checkboxes in the booking form)
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string }
+              - { name: text, label: Description, type: text }
+              - name: icon
+                label: Icon
+                type: select
+                options:
+                  values:
+                    - { name: location, label: Location pin }
+                    - { name: rush, label: Stopwatch (rush) }
+                    - { name: photos, label: Photos }
+                    - { name: usb, label: USB drive }
+                    - { name: plus, label: Plus sign }
+          - { name: notes_heading, label: Notes heading, type: string }
+          - { name: notes, label: Notes, type: text, list: true }
+          - { name: cta_heading, label: Bottom heading, type: string }
+          - { name: cta_text, label: Bottom text, type: text }
+          - { name: cta_button, label: Bottom button text, type: string }
+
       - name: contact
         label: Contact / booking
         type: object
@@ -128,4 +169,4 @@ content:
           - { name: instagram_url, label: Instagram link, type: string }
           - { name: note, label: Note under the cards, type: text }
           - { name: button, label: Send button text, type: string }
-          - { name: shoot_types, label: Shoot type choices, type: string, list: true }
+          - { name: shoot_types, label: "Shoot type choices (match package names so 'Book this package' preselects them)", type: string, list: true }
