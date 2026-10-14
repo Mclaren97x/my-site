@@ -1,5 +1,8 @@
 // The address the contact form sends inquiries to.
 const CONTACT_EMAIL = "speedofphotography@gmail.com";
+// FormSubmit (formsubmit.co) emails each booking to CONTACT_EMAIL. No account needed:
+// the very first submission sends an "Activate" email to that inbox, which must be clicked once.
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -89,25 +92,58 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") show(current + 1);
 });
 
-// ---------- Contact form (opens the visitor's email app) ----------
+// ---------- Contact form (emails each booking to CONTACT_EMAIL) ----------
 const form = document.getElementById("contact-form");
-form.addEventListener("submit", (e) => {
+const submitBtn = form.querySelector('button[type="submit"]');
+const statusEl = document.getElementById("form-status");
+
+function setStatus(kind, html) {
+  statusEl.className = `form-status is-${kind}`;
+  statusEl.innerHTML = html;
+}
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  if (!CONTACT_EMAIL) {
-    alert("The contact form isn't set up yet. Please reach out on social media for now.");
-    return;
-  }
   const data = new FormData(form);
-  const subject = `Shoot inquiry: ${data.get("type")}${data.get("car") ? " - " + data.get("car") : ""}`;
-  const body = [
-    `Name: ${data.get("name")}`,
-    `Email: ${data.get("email")}`,
-    `Car: ${data.get("car")}`,
-    `Shoot type: ${data.get("type")}`,
-    "",
-    data.get("message"),
-  ].join("\n");
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  if (data.get("_honey")) return; // filled in by spam bots only
+
+  const subject = `New shoot booking: ${data.get("type")}${data.get("car") ? " - " + data.get("car") : ""}`;
+  const payload = {
+    name: data.get("name"),
+    email: data.get("email"),
+    car: data.get("car") || "Not given",
+    shoot_type: data.get("type"),
+    details: data.get("message") || "None",
+    _subject: subject,
+    _template: "table",
+    _replyto: data.get("email"),
+  };
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
+  setStatus("pending", "");
+
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const result = await res.json().catch(() => ({}));
+    if (!res.ok || String(result.success) === "false") throw new Error(result.message || res.statusText);
+    form.reset();
+    setStatus("success", "Thanks! Your booking request was sent. I'll get back to you soon.");
+  } catch (err) {
+    const body = Object.entries(payload)
+      .filter(([k]) => !k.startsWith("_"))
+      .map(([k, v]) => `${k.replace("_", " ")}: ${v}`)
+      .join("\n");
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus("error", `Sorry, that didn't go through. Please <a href="${mailto}">email me directly</a> instead.`);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send inquiry";
+  }
 });
 
 // ---------- Reveal sections on scroll ----------

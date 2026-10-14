@@ -526,6 +526,19 @@ h1, h2, h3 {
   border-color: var(--accent);
 }
 .contact-form .btn { justify-self: start; }
+.contact-form .btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-status { margin: 0; min-height: 1.5em; }
+.form-status:empty { display: none; }
+.form-status.is-success, .form-status.is-error {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.form-status.is-success { border-left: 3px solid var(--accent); }
+.form-status.is-error { border-left: 3px solid #ff5d5d; }
+.form-status a { color: var(--accent); text-decoration: underline; }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-alt); }
