@@ -1,5 +1,5 @@
-// The address the contact form sends inquiries to. Fill this in before going live.
-const CONTACT_EMAIL = "";
+// The address the contact form sends inquiries to.
+const CONTACT_EMAIL = "speedofphotography@gmail.com";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -111,7 +111,7 @@ form.addEventListener("submit", (e) => {
 });
 
 // ---------- Reveal sections on scroll ----------
-const revealTargets = document.querySelectorAll(".section-head, .gallery, .service, .process li, .about-photo, .about-text, .contact-form");
+const revealTargets = document.querySelectorAll(".section-head, .gallery, .service, .process li, .about-photo, .about-text, .contact-info, .contact-form");
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
