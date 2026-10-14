@@ -121,8 +121,9 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.logo img { height: 62px; width: auto; }
-.site-footer .logo img { height: 60px; }
+.logo img { height: 60px; width: auto; }
+/* Logo fills the header with an even 10px gap above and below */
+.site-header .logo img { height: calc(var(--header-h) - 20px); max-width: 45vw; object-fit: contain; }
 .logo em { font-style: italic; color: var(--accent); }
 .logo-mark {
   width: 26px;
@@ -647,7 +648,6 @@ h1, h2, h3 {
 @media (max-width: 760px) {
   :root { --header-h: 64px; }
   .nav { padding: 0 16px; }
-  .site-header .logo img { height: 52px; }
   .contact-profile { max-width: 420px; }
   .nav-toggle { display: flex; }
   .nav-links {
