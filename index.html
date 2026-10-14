@@ -3,63 +3,199 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Site</title>
+  <title>Speed Of Photography | Automotive Photography</title>
+  <meta name="description" content="Speed Of Photography: automotive photography for owners, builders, dealerships and events. Rolling shots, studio-style static shoots, details and car meets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#" class="logo">My Site</a>
-      <ul>
-        <li><a href="#about">About</a></li>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#top" class="logo" aria-label="Speed Of Photography home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Speed <em>Of</em> Photography</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links" class="nav-links">
         <li><a href="#work">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Book a shoot</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="top">
+    <!-- HERO: put your best shot at images/hero.jpg -->
     <section class="hero">
-      <h1>Hello, I'm Mclaren97x</h1>
-      <p>This is my new website. Edit <code>index.html</code> to make it yours.</p>
-      <a href="#contact" class="button">Get in touch</a>
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Automotive photography</p>
+        <h1>Cars, captured<br><span>at full speed.</span></h1>
+        <p class="hero-sub">Rolling shots, detail work and editorial-style shoots for owners, builders, dealerships and events.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book a shoot</a>
+          <a href="#work" class="btn btn-ghost">See the work</a>
+        </div>
+      </div>
+      <a href="#work" class="scroll-cue" aria-label="Scroll to work"><span></span></a>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>Write a few sentences about yourself or your business here.</p>
+    <!-- STATS STRIP: change these to your real numbers -->
+    <section class="strip" aria-label="Highlights">
+      <div><strong>Rolling</strong><span>car-to-car motion shots</span></div>
+      <div><strong>Static</strong><span>location &amp; night shoots</span></div>
+      <div><strong>Details</strong><span>wheels, interiors, engine bays</span></div>
+      <div><strong>Events</strong><span>meets, shows &amp; track days</span></div>
     </section>
 
-    <section id="work">
-      <h2>Work</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Project one</h3>
-          <p>A short description of something you've made.</p>
+    <!-- GALLERY: add photos to images/ named gallery-1.jpg ... gallery-9.jpg -->
+    <section id="work" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Portfolio</p>
+        <h2>Selected work</h2>
+      </div>
+      <div class="filters" role="tablist" aria-label="Filter gallery">
+        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter" data-filter="rolling" role="tab" aria-selected="false">Rolling</button>
+        <button class="filter" data-filter="static" role="tab" aria-selected="false">Static</button>
+        <button class="filter" data-filter="details" role="tab" aria-selected="false">Details</button>
+        <button class="filter" data-filter="events" role="tab" aria-selected="false">Events</button>
+      </div>
+      <div class="gallery">
+        <figure class="shot wide" data-cat="rolling" style="--img:url('images/gallery-1.jpg')"><figcaption>Rolling shot</figcaption></figure>
+        <figure class="shot" data-cat="details" style="--img:url('images/gallery-2.jpg')"><figcaption>Wheel detail</figcaption></figure>
+        <figure class="shot tall" data-cat="static" style="--img:url('images/gallery-3.jpg')"><figcaption>Night static</figcaption></figure>
+        <figure class="shot" data-cat="events" style="--img:url('images/gallery-4.jpg')"><figcaption>Car meet</figcaption></figure>
+        <figure class="shot" data-cat="details" style="--img:url('images/gallery-5.jpg')"><figcaption>Interior</figcaption></figure>
+        <figure class="shot wide" data-cat="static" style="--img:url('images/gallery-6.jpg')"><figcaption>Location shoot</figcaption></figure>
+        <figure class="shot" data-cat="rolling" style="--img:url('images/gallery-7.jpg')"><figcaption>Highway roller</figcaption></figure>
+        <figure class="shot" data-cat="events" style="--img:url('images/gallery-8.jpg')"><figcaption>Track day</figcaption></figure>
+        <figure class="shot" data-cat="details" style="--img:url('images/gallery-9.jpg')"><figcaption>Engine bay</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="services" class="section section-alt">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>What I shoot</h2>
+      </div>
+      <div class="services">
+        <article class="service">
+          <span class="service-num">01</span>
+          <h3>Rolling shoots</h3>
+          <p>Car-to-car motion photography with sharp subjects and blurred backgrounds that make your car look fast standing still.</p>
         </article>
-        <article class="card">
-          <h3>Project two</h3>
-          <p>A short description of something you've made.</p>
+        <article class="service">
+          <span class="service-num">02</span>
+          <h3>Private commissions</h3>
+          <p>A dedicated shoot for your car at locations picked to match its character, from city streets at night to open back roads.</p>
         </article>
-        <article class="card">
-          <h3>Project three</h3>
-          <p>A short description of something you've made.</p>
+        <article class="service">
+          <span class="service-num">03</span>
+          <h3>Builders &amp; dealerships</h3>
+          <p>Clean, consistent listing and build-showcase photos that sell cars and show off the work that went into them.</p>
+        </article>
+        <article class="service">
+          <span class="service-num">04</span>
+          <h3>Events &amp; meets</h3>
+          <p>Coverage of car meets, shows and track days, delivered fast so you can post while the event is still trending.</p>
         </article>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Add how people can reach you.</p>
+    <section id="process" class="section">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>From first message to final edits</h2>
+      </div>
+      <ol class="process">
+        <li><h3>Plan</h3><p>Tell me about your car and the look you're after. We pick a location, time and shot list together.</p></li>
+        <li><h3>Shoot</h3><p>We meet on location. Rolling shots, statics and details, at the light that suits your car best.</p></li>
+        <li><h3>Edit</h3><p>Every selected photo is hand-edited for color, reflections and clean backgrounds.</p></li>
+        <li><h3>Deliver</h3><p>You get a private online gallery with full-resolution downloads, ready for print and social.</p></li>
+      </ol>
+    </section>
+
+    <!-- ABOUT: put a photo of you or your camera at images/about.jpg -->
+    <section id="about" class="section section-alt about">
+      <div class="about-photo" aria-hidden="true"></div>
+      <div class="about-text">
+        <p class="eyebrow">About</p>
+        <h2>The person behind the lens</h2>
+        <p>I'm the photographer behind Speed Of Photography, and cars are what I shoot. I chase the lines, the light and the motion that make each car look like itself.</p>
+        <p>Whether it's a daily driver you love, a build years in the making or a showroom lineup, I'll make it look as good on screen as it does in person.</p>
+        <a href="#contact" class="btn btn-primary">Work with me</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h2>Book a shoot</h2>
+        <p class="section-sub">Tell me about your car and what you have in mind. I'll get back to you with availability and a quote.</p>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="car">Car</label>
+          <input id="car" name="car" type="text" placeholder="Year, make and model">
+        </div>
+        <div class="field">
+          <label for="type">Shoot type</label>
+          <select id="type" name="type">
+            <option>Rolling shoot</option>
+            <option>Private commission</option>
+            <option>Builder / dealership</option>
+            <option>Event coverage</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field field-full">
+          <label for="message">Details</label>
+          <textarea id="message" name="message" rows="5" placeholder="Location, dates, the look you're going for..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary field-full">Send inquiry</button>
+      </form>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Mclaren97x</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="#top" class="logo">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Speed <em>Of</em> Photography</span>
+      </a>
+      <!-- Replace # with your real profile links -->
+      <ul class="socials">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="year"></span> Speed Of Photography</p>
+    </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+    <div class="lightbox-img" role="img"></div>
+    <button class="lightbox-next" aria-label="Next photo">&#8250;</button>
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
