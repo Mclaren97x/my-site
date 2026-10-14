@@ -199,7 +199,7 @@ h1, h2, h3 {
     repeating-linear-gradient(-20deg, transparent 0 60px, rgba(46, 123, 255, 0.07) 60px 62px),
     radial-gradient(ellipse at 75% 60%, #122a52 0%, #0b1424 45%, var(--bg) 80%);
   background-size: cover;
-  background-position: center top;
+  background-position: center 70%; /* keeps the car (lower part of the photo) in view on wide screens */
   transform: scale(1.05);
   animation: hero-in 1.6s ease-out forwards;
 }
@@ -213,7 +213,7 @@ h1, h2, h3 {
   padding: calc(var(--header-h) + 7vh) 24px 80px;
 }
 .hero h1 {
-  font-size: clamp(2.6rem, 7vw, 6rem);
+  font-size: clamp(2.4rem, min(7vw, 9vh), 6rem); /* shrinks on short screens so the car stays clear */
   font-style: italic;
   max-width: 900px;
   margin-bottom: 24px;
