@@ -1,0 +1,34 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+
+# Node.js / npm
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# Build output
+dist/
+build/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets and local config (never commit these)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
