@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo">My Site</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Hello, I'm Mclaren97x</h1>
+      <p>This is my new website. Edit <code>index.html</code> to make it yours.</p>
+      <a href="#contact" class="button">Get in touch</a>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Write a few sentences about yourself or your business here.</p>
+    </section>
+
+    <section id="work">
+      <h2>Work</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Project one</h3>
+          <p>A short description of something you've made.</p>
+        </article>
+        <article class="card">
+          <h3>Project two</h3>
+          <p>A short description of something you've made.</p>
+        </article>
+        <article class="card">
+          <h3>Project three</h3>
+          <p>A short description of something you've made.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Add how people can reach you.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mclaren97x</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
