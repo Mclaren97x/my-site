@@ -1,0 +1,5 @@
+baseurl: /my-site
+exclude:
+  - README.md
+  - images/README.md
+  - .pages.yml

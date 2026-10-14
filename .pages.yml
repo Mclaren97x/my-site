@@ -1,0 +1,131 @@
+# Pages CMS editor setup (https://app.pagescms.org).
+# Only GitHub accounts with write access to this repo can sign in and edit.
+
+media:
+  input: images
+  output: /images
+  categories: [image]
+
+content:
+  - name: content
+    label: Website text & photos
+    type: file
+    path: _data/content.yml
+    format: yaml
+    fields:
+      - name: business_name
+        label: Business name
+        type: string
+        required: true
+      - name: seo_title
+        label: Browser tab / Google title
+        type: string
+      - name: seo_description
+        label: Google description
+        type: text
+      - name: logo
+        label: Logo (white on transparent PNG works best)
+        type: image
+
+      - name: hero
+        label: Top banner
+        type: object
+        fields:
+          - { name: background, label: Background photo (wide/landscape), type: image }
+          - { name: eyebrow, label: Small label above the slogan, type: string }
+          - { name: title_line_1, label: Slogan line 1 (white), type: string }
+          - { name: title_line_2, label: Slogan line 2 (blue), type: string }
+          - { name: subtitle, label: Text under the slogan, type: text }
+          - { name: primary_button, label: Blue button text, type: string }
+          - { name: secondary_button, label: Outline button text, type: string }
+
+      - name: highlights
+        label: Highlights strip (under the banner)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: string }
+
+      - name: gallery
+        label: Gallery
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - name: photos
+            label: Photos
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Photo, type: image }
+              - { name: caption, label: Caption, type: string }
+              - name: category
+                label: Filter category
+                type: select
+                options:
+                  values:
+                    - { name: rolling, label: Rolling }
+                    - { name: static, label: Static }
+                    - { name: details, label: Details }
+                    - { name: events, label: Events }
+              - name: size
+                label: Tile size
+                type: select
+                options:
+                  values:
+                    - { name: normal, label: Normal }
+                    - { name: wide, label: Wide (2 columns) }
+                    - { name: tall, label: Tall (2 rows) }
+
+      - name: services
+        label: Services
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - name: items
+            label: Services
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: text, label: Description, type: text }
+
+      - name: process
+        label: How it works
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - name: steps
+            label: Steps
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: text, label: Description, type: text }
+
+      - name: about
+        label: About
+        type: object
+        fields:
+          - { name: photo, label: Photo of you, type: image }
+          - { name: eyebrow, label: Small label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+          - { name: button, label: Button text, type: string }
+
+      - name: contact
+        label: Contact / booking
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: intro, label: Intro text, type: text }
+          - { name: email, label: "Email (bookings go here; a new address needs one re-activation from FormSubmit)", type: string }
+          - { name: instagram_handle, label: Instagram handle, type: string }
+          - { name: instagram_url, label: Instagram link, type: string }
+          - { name: note, label: Note under the cards, type: text }
+          - { name: button, label: Send button text, type: string }
+          - { name: shoot_types, label: Shoot type choices, type: string, list: true }

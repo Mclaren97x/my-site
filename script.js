@@ -1,5 +1,5 @@
-// The address the contact form sends inquiries to.
-const CONTACT_EMAIL = "speedofphotography@gmail.com";
+// The address the contact form sends inquiries to (set in the content file, read from the form).
+const CONTACT_EMAIL = document.getElementById("contact-form").dataset.email;
 // FormSubmit (formsubmit.co) emails each booking to CONTACT_EMAIL. No account needed:
 // the very first submission sends an "Activate" email to that inbox, which must be clicked once.
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
@@ -142,7 +142,7 @@ form.addEventListener("submit", async (e) => {
     setStatus("error", `Sorry, that didn't go through. Please <a href="${mailto}">email me directly</a> instead.`);
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = "Send inquiry";
+    submitBtn.textContent = submitBtn.dataset.label;
   }
 });
 
