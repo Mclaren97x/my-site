@@ -471,34 +471,6 @@ h1, h2, h3 {
   align-items: start;
 }
 .contact-info { display: flex; flex-direction: column; gap: 12px; }
-.contact-profile {
-  position: relative;
-  margin-bottom: 12px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 12px 12px 0 -2px var(--accent);
-}
-/* Shown at the photo's own 2:3 shape, never cropped or stretched */
-.contact-photo {
-  width: 100%;
-  height: auto;
-}
-.contact-profile::after {
-  content: "";
-  position: absolute;
-  inset: 45% 0 0 0;
-  background: linear-gradient(to top, rgba(5, 5, 6, 0.95) 15%, transparent);
-}
-.contact-logo {
-  position: absolute;
-  left: 50%;
-  bottom: 16px;
-  z-index: 1;
-  width: 78%;
-  height: auto;
-  transform: translateX(-50%);
-}
 .contact-card {
   display: flex;
   align-items: center;
@@ -644,7 +616,6 @@ h1, h2, h3 {
 @media (max-width: 760px) {
   :root { --header-h: 64px; }
   .nav { padding: 0 16px; }
-  .contact-profile { max-width: 420px; }
   .nav-toggle { display: flex; }
   .nav-links {
     position: fixed;

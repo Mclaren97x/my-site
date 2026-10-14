@@ -14,8 +14,8 @@ Drop your photos in this folder with these exact names and they appear on the si
 | `gallery-7.jpg` | Gallery (Rolling) | Any |
 | `gallery-8.jpg` | Gallery (Events) | Any |
 | `gallery-9.jpg` | Gallery (Details) | Any |
-| `me.jpg` | About and Contact section photo (already added) | Portrait |
-| `logo.png` / `logo-small.png` | Contact section and header/footer logo (already added) | White on transparent |
+| `me.jpg` | About section photo (already added) | Portrait |
+| `logo-small.png` | Header and footer logo (already added) | White on transparent |
 
 Export at around 2000px on the long edge and 80% JPEG quality so the site stays fast.
 To change a photo's caption or category, edit its `<figure>` line in `index.html`.
