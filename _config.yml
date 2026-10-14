@@ -1,4 +1,4 @@
-baseurl: /my-site
+baseurl: ""
 exclude:
   - README.md
   - images/README.md
