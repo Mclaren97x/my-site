@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <header class="site-header">
@@ -62,10 +62,16 @@
       </div>
       <div class="filters" role="tablist" aria-label="Filter gallery">
         <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        {%- assign used_cats = c.gallery.photos | map: "category" %}
+        {%- if used_cats contains "rolling" %}
         <button class="filter" data-filter="rolling" role="tab" aria-selected="false">Rolling</button>
+        {%- endif %}{% if used_cats contains "static" %}
         <button class="filter" data-filter="static" role="tab" aria-selected="false">Static</button>
+        {%- endif %}{% if used_cats contains "details" %}
         <button class="filter" data-filter="details" role="tab" aria-selected="false">Details</button>
+        {%- endif %}{% if used_cats contains "events" %}
         <button class="filter" data-filter="events" role="tab" aria-selected="false">Events</button>
+        {%- endif %}
       </div>
       <div class="gallery">
         {%- for p in c.gallery.photos %}
