@@ -1,116 +1,124 @@
 business_name: Speed Of Photography
 seo_title: Speed Of Photography | Automotive Photography
-seo_description: 'Speed Of Photography: automotive photography for owners, builders, dealerships and events.
-  Rolling shots, studio-style static shoots, details and car meets.'
+seo_description: "Speed Of Photography: automotive photography for owners,
+  builders, dealerships and events. Rolling shots, studio-style static shoots,
+  details and car meets."
 logo: /images/logo-small.png
 hero:
+  background: /images/hero-center.jpg
   eyebrow: Automotive photography
   title_line_1: Capturing motion,
   title_line_2: even when it's standing still.
-  subtitle: Rolling shots, detail work and editorial-style shoots for owners, shops, dealerships and events.
+  subtitle: Rolling shots, detail work and editorial-style shoots for owners,
+    shops, dealerships and events.
   primary_button: Book a shoot
   secondary_button: See the work
-  background: /images/hero-center.jpg
 highlights:
-- title: Rollers
-  text: car-to-car motion shots
-- title: Static
-  text: location & night shoots
-- title: Details
-  text: wheels, interiors, engine bays, the little things that makes your car special
-- title: Events
-  text: meets, shows & track days
+  - title: Rollers
+    text: car-to-car motion shots
+  - title: Static
+    text: location & night shoots
+  - title: Details
+    text: wheels, interiors, engine bays, the little things that makes your car
+      special
+  - title: Events
+    text: meets, shows & track days
 gallery:
   eyebrow: Portfolio
   heading: Selected work
   photos:
-  - image: /images/huracan-above.jpg
-    caption: Huracán from above
-    category: static
-    size: tall
-  - image: /images/laferrari-doors-up.jpg
-    caption: LaFerrari, doors up
-    category: static
-    size: tall
-  - image: /images/porsche-993-turbo.jpg
-    caption: 993 Turbo
-    category: static
-    size: tall
-  - image: /images/evo-x-salt-flats.jpg
-    caption: Evo X on the salt flats
-    category: static
-    size: normal
-  - image: /images/porsche-crest.jpg
-    caption: Porsche crest
-    category: details
-    size: normal
-  - image: /images/miata-salt-flats.jpg
-    caption: Miata on the salt flats
-    category: static
-    size: normal
-  - image: /images/aventador-night.jpg
-    caption: Aventador after dark
-    category: static
-    size: tall
-  - image: /images/emira-pit-lane.jpg
-    caption: Emira in pit lane
-    category: events
-    size: tall
-  - image: /images/lamborghini-interior.jpg
-    caption: Lamborghini interior
-    category: details
-    size: tall
+    - image: /images/huracan-above.jpg
+      caption: Lamborghini Huracán
+      category: static
+      size: tall
+    - image: /images/laferrari-doors-up.jpg
+      caption: Ferrari LaFerrari
+      category: static
+      size: tall
+    - image: /images/porsche-993-turbo.jpg
+      caption: Porsche 911 993 Turbo
+      category: static
+      size: tall
+    - image: /images/evo-x-salt-flats.jpg
+      caption: Mitsubishi Evo X on the salt flats
+      category: static
+      size: normal
+    - image: /images/porsche-crest.jpg
+      caption: Porsche crest
+      category: details
+      size: normal
+    - image: /images/miata-salt-flats.jpg
+      caption: Mazda Miata on the salt flats
+      category: static
+      size: normal
+    - image: /images/aventador-night.jpg
+      caption: Lamborghini Aventador SV at night
+      category: static
+      size: tall
+    - image: /images/emira-pit-lane.jpg
+      caption: Lotus Emira in pit lane
+      category: events
+      size: tall
+    - image: /images/lamborghini-interior.jpg
+      caption: Lamborghini Aventador SV interior
+      category: details
+      size: tall
 services:
   eyebrow: Services
   heading: What I shoot
   items:
-  - title: Rolling shoots
-    text: Car-to-car motion photography with sharp subjects and blurred backgrounds that make your car
-      look fast standing still.
-  - title: Private commissions
-    text: A dedicated shoot for your car at locations picked to match its character, from city streets
-      at night to open back roads.
-  - title: Builders & dealerships
-    text: Clean, consistent listing and build-showcase photos that sell cars and show off the work that
-      went into them.
-  - title: Events & meets
-    text: Coverage of car meets, shows and track days, delivered fast so you can post while the event
-      is still trending.
+    - title: Rolling shoots
+      text: Car-to-car motion photography with sharp subjects and blurred backgrounds
+        that make your car look fast standing still.
+    - title: Private commissions
+      text: A dedicated shoot for your car at locations picked to match its character,
+        from city streets at night to open back roads.
+    - title: Shops & dealerships
+      text: Clean, consistent listing and build-showcase photos that sell cars and
+        show off the work that went into them.
+    - title: Events & meets
+      text: Coverage of car meets, shows and track days, delivered fast so you can
+        post while the event is still trending.
 process:
   eyebrow: How it works
   heading: From first message to final edits
   steps:
-  - title: Plan
-    text: Tell me about your car and the look you're after. We pick a location, time and shot list together.
-  - title: Shoot
-    text: We meet on location. Rolling shots, statics and details, at the light that suits your car best.
-  - title: Edit
-    text: Every selected photo is hand-edited for color, reflections and clean backgrounds.
-  - title: Deliver
-    text: You get a private online gallery with full-resolution downloads, ready for print and social.
+    - title: Plan
+      text: Tell me about your car and the look you're after. We pick a location, time
+        and shot list together.
+    - title: Shoot
+      text: We meet on location. Rolling shots, statics and details, at the light that
+        suits your car best.
+    - title: Edit
+      text: Every selected photo is hand-edited for color, reflections and clean
+        backgrounds.
+    - title: Deliver
+      text: You get a private online gallery with full-resolution downloads, ready for
+        print and social.
 about:
   photo: /images/me.jpg
   eyebrow: About
   heading: The person behind the lens
   paragraphs:
-  - My name's Jaxon, and I'm the photographer! I've loved cars my whole life, and it's turned into a love
-    of photographing them! I chase the designs, light, and motion that makes each car special.
-  - Whether it's a daily driver you love, a build years in the making or a showroom lineup, I'll make
-    it look as good on screen as it does in person.
+    - My name's Jaxon, and I'm the photographer! I've loved cars my whole life,
+      and it's turned into a love of photographing them! I chase the designs,
+      light, and motion that makes each car special.
+    - Whether it's a daily driver you love, a build years in the making or a
+      showroom lineup, I'll make it look as good on screen as it does in person.
   button: Work with me
 contact:
   eyebrow: Contact me
   heading: Book a shoot
-  intro: Tell me about your car and what you have in mind. I'll get back to you with availability and
-    a quote.
+  intro: Tell me about your car and what you have in mind. I'll get back to you
+    with availability and a quote.
   email: speedofphotography@gmail.com
-  instagram_handle: '@speedofphotography'
+  instagram_handle: "@speedofphotography"
   instagram_url: https://www.instagram.com/speedofphotography/
   note: DMs are open. Instagram is the quickest way to see my latest work.
   button: Send inquiry
   shoot_types:
-  - Rolling shoot
-  - Private commission
-  - Builder / dealership
-  - Event coverage
-  - Not sure yet
+    - Rolling shoot
+    - Private commission
+    - Builder / dealership
+    - Event coverage
+    - Not sure yet
