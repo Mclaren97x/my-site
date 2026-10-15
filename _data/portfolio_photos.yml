@@ -56,7 +56,7 @@ photos:
     category: static
     size: tall
   - image: /images/ford-gt40-meet.jpg
-    caption: "Ford GT40 "
+    caption: Ford GT40
     category: events
     size: tall
   - image: /images/carrera-gt-garage.jpg
@@ -64,7 +64,7 @@ photos:
     category: static
     size: tall
   - image: /images/ferrari-interior-seats.jpg
-    caption: Ferrari interior
+    caption: Ferrari LaFerrari interior
     category: details
     size: tall
   - image: /images/yamaha-r6-rolling.jpg
