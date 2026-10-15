@@ -167,10 +167,6 @@ locations:
       label: Summer
       credit: 'Photo: An Errant Knight, CC BY-SA 4.0 (resized)'
       credit_link: https://commons.wikimedia.org/wiki/File:Tibble_Fork_Reservoir_Dam,_Aug_17.jpg
-    - photo: /images/tibble-fork-fall-usfs.jpg
-      label: Fall
-      credit: 'Photo: U.S. Forest Service (public domain)'
-      credit_link: https://commons.wikimedia.org/wiki/File:Tibble_Fork_GN_(21234030558).jpg
   - {}
   - {}
   - {}
