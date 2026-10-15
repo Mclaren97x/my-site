@@ -68,11 +68,11 @@ photos:
     category: details
     size: tall
   - image: /images/yamaha-r6-rolling.jpg
-    caption: Yamaha R6 rolling
+    caption: Yamaha R6
     category: rolling
     size: tall
   - image: /images/corvette-c7-rolling.jpg
-    caption: Chevrolet Corvette C7 Stingray rolling
+    caption: Chevrolet Corvette C7 Stingray
     category: rolling
     size: tall
   - image: /images/mclaren-solus-gt-wheel.jpg
@@ -80,7 +80,7 @@ photos:
     category: details
     size: tall
   - image: /images/mclaren-caliper.jpg
-    caption: McLaren brake caliper
+    caption: McLaren Solus GT brake caliper
     category: details
     size: tall
   - image: /images/mclaren-solus-gt-badge.jpg
@@ -92,6 +92,6 @@ photos:
     category: details
     size: tall
   - image: /images/lamborghini-taillight.jpg
-    caption: Lamborghini taillight
+    caption: Lamborghini Countach LPI800-4 Taillight
     category: details
     size: tall
