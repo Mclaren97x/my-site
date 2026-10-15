@@ -547,3 +547,118 @@ content:
       - name: credit_link
         label: Credit link (photo's source page)
         type: string
+- name: utmedia
+  label: UTMedia page
+  type: file
+  path: _data/utmedia.yml
+  format: yaml
+  fields:
+  - name: nav_label
+    label: Menu & footer link text
+    type: string
+  - name: seo_title
+    label: Browser tab / Google title
+    type: string
+  - name: seo_description
+    label: Google description
+    type: text
+  - name: banner
+    label: Banner photo at the top (optional)
+    type: image
+  - name: eyebrow
+    label: Small label above the title
+    type: string
+  - name: heading
+    label: Page title
+    type: string
+  - name: tagline
+    label: Tagline under the title
+    type: string
+  - name: intro
+    label: Intro paragraph
+    type: text
+  - name: pillars_eyebrow
+    label: 'Cards section: small label'
+    type: string
+  - name: pillars_heading
+    label: 'Cards section: heading'
+    type: string
+  - name: pillars
+    label: Cards
+    type: object
+    list:
+      collapsible:
+        collapsed: false
+        summary: '{title}'
+    fields:
+    - name: icon
+      label: Icon
+      type: select
+      options:
+        values:
+        - name: feedback
+          label: Speech bubble
+        - name: showcase
+          label: Picture
+        - name: connect
+          label: People
+        - name: camera
+          label: Camera
+        - name: plus
+          label: Plus sign
+    - name: title
+      label: Title
+      type: string
+    - name: text
+      label: Text
+      type: text
+  - name: showcase_heading
+    label: 'Community photos: heading (section hidden until a photo is added)'
+    type: string
+  - name: showcase_intro
+    label: 'Community photos: intro text'
+    type: text
+  - name: showcase
+    label: Community photos
+    type: object
+    fields:
+    - name: photos
+      label: Photos
+      type: object
+      list:
+        collapsible:
+          collapsed: false
+          summary: '{caption}'
+      fields:
+      - name: image
+        label: Photo
+        type: image
+      - name: caption
+        label: Caption
+        type: string
+      - name: photographer
+        label: Photographer (credit shown with the caption)
+        type: string
+      - name: size
+        label: Tile size
+        type: select
+        options:
+          values:
+          - name: normal
+            label: Normal
+          - name: wide
+            label: Wide (2 columns)
+          - name: tall
+            label: Tall (2 rows)
+  - name: join_heading
+    label: 'Bottom section: heading'
+    type: string
+  - name: join_text
+    label: 'Bottom section: text'
+    type: text
+  - name: join_button
+    label: 'Bottom section: button text'
+    type: string
+  - name: join_link
+    label: 'Bottom section: button link (button hidden until set)'
+    type: string

@@ -1,0 +1,33 @@
+nav_label: UTMedia
+seo_title: UTMedia
+seo_description: UTMedia is a community built for photographers, by photographers, across the state of Utah.
+banner: /images/salt-flats-sunset.jpg
+eyebrow: Community
+heading: UTMedia
+tagline: Built for photographers, by photographers.
+intro: UTMedia is a community for photographers of all mediums across the state of Utah. It's a safe space
+  to give and receive feedback, show off your work, and connect with other photographers.
+pillars_eyebrow: What we're about
+pillars_heading: Why UTMedia
+pillars:
+- icon: feedback
+  title: Give & receive feedback
+  text: Share your work and get honest, constructive feedback from people who shoot too, and help others
+    grow along the way.
+- icon: showcase
+  title: Show off your work
+  text: A place to put your best shots in front of people who appreciate the craft.
+- icon: connect
+  title: Connect with photographers
+  text: Meet other photographers across Utah, trade ideas, and find people to shoot with.
+- icon: camera
+  title: All mediums welcome
+  text: Cars, portraits, landscapes, film, digital, video. If you create, you belong here.
+showcase_heading: From the community
+showcase_intro: ''
+showcase:
+  photos: []
+join_heading: Get involved
+join_text: Interested in joining UTMedia? Details on how to get involved are coming soon.
+join_button: Join UTMedia
+join_link: ''

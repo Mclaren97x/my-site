@@ -1,0 +1,81 @@
+---
+layout: default
+title: UTMedia
+data_file: utmedia
+permalink: /utmedia/
+# Text and photos come from _data/utmedia.yml (edit it in Pages CMS under "UTMedia page").
+---
+{%- assign base = site.baseurl -%}
+{%- assign u = site.data.utmedia -%}
+    <section class="page-hero{% if u.banner and u.banner != "" %} has-banner{% endif %}"{% if u.banner and u.banner != "" %} style="--banner:url('{{ base }}{{ u.banner }}')"{% endif %}>
+      <div class="page-hero-inner">
+        <p class="eyebrow">{{ u.eyebrow | escape }}</p>
+        <h1>{{ u.heading | escape }}</h1>
+        {%- if u.tagline and u.tagline != "" %}
+        <p class="page-tagline">{{ u.tagline | escape }}</p>
+        {%- endif %}
+      </div>
+    </section>
+
+    {%- if u.intro and u.intro != "" %}
+    <section class="section utm-intro">
+      <p class="utm-lead">{{ u.intro | escape }}</p>
+    </section>
+    {%- endif %}
+
+    {%- if u.pillars.size > 0 %}
+    <section class="section section-alt" aria-labelledby="utm-pillars-heading">
+      <div class="section-head">
+        <p class="eyebrow">{{ u.pillars_eyebrow | escape }}</p>
+        <h2 id="utm-pillars-heading">{{ u.pillars_heading | escape }}</h2>
+      </div>
+      <div class="addons utm-pillars">
+        {%- for pl in u.pillars %}
+        <article class="addon">
+          <span class="addon-icon" aria-hidden="true">
+            {%- case pl.icon -%}
+            {%- when "feedback" -%}<svg viewBox="0 0 24 24"><path d="M4 5h16v10H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.6"/></svg>
+            {%- when "showcase" -%}<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 16l4-5 3 3 2-2 3 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="16" cy="9" r="1.4" fill="currentColor"/></svg>
+            {%- when "connect" -%}<svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16.5" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M13.5 15.2c.9-.5 1.9-.7 3-.7 2.2 0 4 1.3 4.7 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            {%- when "camera" -%}<svg viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            {%- else -%}<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg>
+            {%- endcase -%}
+          </span>
+          <h3>{{ pl.title | escape }}</h3>
+          <p>{{ pl.text | escape }}</p>
+        </article>
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endif %}
+
+    {%- assign shared = u.showcase.photos %}
+    {%- if shared.size > 0 %}
+    <section class="section" aria-labelledby="utm-showcase-heading">
+      <div class="section-head">
+        <h2 id="utm-showcase-heading">{{ u.showcase_heading | escape }}</h2>
+        {%- if u.showcase_intro and u.showcase_intro != "" %}<p class="section-sub">{{ u.showcase_intro | escape }}</p>{% endif %}
+      </div>
+      <div class="gallery">
+        {%- for p in shared %}
+        <figure class="shot{% if p.size == 'wide' %} wide{% elsif p.size == 'tall' %} tall{% endif %}" data-cat="all"{% if p.image and p.image != "" %} style="--img:url('{{ base }}{{ p.image }}')"{% endif %}><figcaption>{{ p.caption | escape }}{% if p.photographer and p.photographer != "" %} &middot; {{ p.photographer | escape }}{% endif %}</figcaption></figure>
+        {%- endfor %}
+      </div>
+    </section>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+    <div class="lightbox-img" role="img"></div>
+    <button class="lightbox-next" aria-label="Next photo">&#8250;</button>
+    <p class="lightbox-caption"></p>
+  </div>
+    {%- endif %}
+
+    <section class="section cta-band{% if shared.size > 0 %} section-alt{% endif %}">
+      <h2>{{ u.join_heading | escape }}</h2>
+      {%- if u.join_text and u.join_text != "" %}<p class="section-sub">{{ u.join_text | escape }}</p>{% endif %}
+      {%- if u.join_link and u.join_link != "" %}
+      <a href="{{ u.join_link | escape }}" class="btn btn-primary"{% unless u.join_link contains "speedofphotography.github.io" %} target="_blank" rel="noopener"{% endunless %}>{{ u.join_button | default: "Join UTMedia" | escape }}</a>
+      {%- endif %}
+    </section>
