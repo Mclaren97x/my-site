@@ -2,4 +2,5 @@ baseurl: ""
 exclude:
   - README.md
   - images/README.md
+  - images/credited/README.md
   - .pages.yml

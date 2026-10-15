@@ -21,3 +21,12 @@ locations:
     label: Mazda Miata
     credit: ''
     credit_link: ''
+- location: Salt Palace Underpass
+  photo_label: Nissan 240SX
+  photo_credit: 'Photo: @ctc.flicks'
+  photo_credit_link: https://www.instagram.com/ctc.flicks/
+  more_photos:
+  - photo: /images/credited/underpass-bikes-ctc-flicks.jpg
+    label: Motorcycles
+    credit: 'Photo: @ctc.flicks'
+    credit_link: https://www.instagram.com/ctc.flicks/

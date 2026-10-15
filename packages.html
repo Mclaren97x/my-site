@@ -92,7 +92,7 @@ permalink: /packages/
             <div class="location-photo" style="--img:url('{{ base }}{{ pl.photo }}')" role="img" aria-label="{{ pl.name | escape }}{% if lp.photo_label %}, {{ lp.photo_label | escape }}{% endif %}"></div>
             {%- if lp.more_photos.size > 0 %}
             <div class="location-thumbs" role="group" aria-label="More photos of {{ pl.name | escape }}">
-              <button type="button" class="location-thumb is-active" style="--img:url('{{ base }}{{ pl.photo }}')" data-img="{{ base }}{{ pl.photo }}" data-label="{{ lp.photo_label | escape }}" data-credit="" data-credit-link="" aria-label="{{ lp.photo_label | default: 'Main photo' | escape }}"></button>
+              <button type="button" class="location-thumb is-active" style="--img:url('{{ base }}{{ pl.photo }}')" data-img="{{ base }}{{ pl.photo }}" data-label="{{ lp.photo_label | escape }}" data-credit="{{ lp.photo_credit | escape }}" data-credit-link="{{ lp.photo_credit_link | escape }}" aria-label="{{ lp.photo_label | default: 'Main photo' | escape }}"></button>
               {%- for mp in lp.more_photos %}{% if mp.photo and mp.photo != "" %}
               <button type="button" class="location-thumb" style="--img:url('{{ base }}{{ mp.photo }}')" data-img="{{ base }}{{ mp.photo }}" data-label="{{ mp.label | escape }}" data-credit="{{ mp.credit | escape }}" data-credit-link="{{ mp.credit_link | escape }}" aria-label="{{ mp.label | default: 'Photo' | escape }}"></button>
               {%- endif %}{% endfor %}
@@ -100,7 +100,11 @@ permalink: /packages/
             {%- endif %}
             <figcaption class="location-caption">
               <span class="location-season">{{ lp.photo_label | escape }}</span>
-              <a class="location-credit" href="" target="_blank" rel="noopener" hidden></a>
+              {%- if lp.photo_credit and lp.photo_credit != "" %}
+              <a class="location-credit"{% if lp.photo_credit_link and lp.photo_credit_link != "" %} href="{{ lp.photo_credit_link | escape }}"{% endif %} target="_blank" rel="noopener">{{ lp.photo_credit | escape }}</a>
+              {%- else %}
+              <a class="location-credit" target="_blank" rel="noopener" hidden></a>
+              {%- endif %}
             </figcaption>
           </figure>
           {%- endif %}

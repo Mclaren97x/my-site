@@ -58,6 +58,8 @@ layout: default
       </div>
       <div class="gallery">
         {%- for p in site.data.gallery_photos.photos %}
+        {%- comment %} Photos by other photographers (images/credited/) must never appear in the gallery or portfolio. {% endcomment %}
+        {%- if p.image contains "/credited/" %}{% continue %}{% endif %}
         <figure class="shot{% if p.size == 'wide' %} wide{% elsif p.size == 'tall' %} tall{% endif %}" data-cat="{{ p.category | escape }}"{% if p.image and p.image != "" %} style="--img:url('{{ base }}{{ p.image }}')"{% endif %}><figcaption>{{ p.caption | escape }}</figcaption></figure>
         {%- endfor %}
       </div>

@@ -527,6 +527,12 @@ content:
     - name: photo_label
       label: Label for the main photo (e.g. Winter, or the car)
       type: string
+    - name: photo_credit
+      label: Credit for the main photo (required if you didn't take it)
+      type: string
+    - name: photo_credit_link
+      label: Credit link for the main photo
+      type: string
     - name: more_photos
       label: More photos (shown as thumbnails visitors can click)
       type: object

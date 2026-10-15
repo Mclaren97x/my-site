@@ -33,6 +33,8 @@ permalink: /portfolio/
       <div class="gallery">
         {%- assign home_photos = site.data.gallery_photos.photos %}
         {%- for p in site.data.portfolio_photos.photos %}
+        {%- comment %} Photos by other photographers (images/credited/) must never appear in the gallery or portfolio. {% endcomment %}
+        {%- if p.image contains "/credited/" %}{% continue %}{% endif %}
         {%- comment %} A photo that is also on the home page always uses the home page caption. {% endcomment %}
         {%- assign caption = p.caption %}
         {%- if p.image and p.image != "" %}
