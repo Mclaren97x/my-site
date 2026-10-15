@@ -44,16 +44,16 @@ layout: default
         <h2>{{ c.gallery.heading | escape }}</h2>
       </div>
       <div class="filters" role="tablist" aria-label="Filter gallery">
-        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">{{ c.filters.all | default: "All" | escape }}</button>
         {%- assign used_cats = c.gallery.photos | map: "category" %}
         {%- if used_cats contains "rolling" %}
-        <button class="filter" data-filter="rolling" role="tab" aria-selected="false">Rolling</button>
+        <button class="filter" data-filter="rolling" role="tab" aria-selected="false">{{ c.filters.rolling | default: "Rolling" | escape }}</button>
         {%- endif %}{% if used_cats contains "static" %}
-        <button class="filter" data-filter="static" role="tab" aria-selected="false">Static</button>
+        <button class="filter" data-filter="static" role="tab" aria-selected="false">{{ c.filters.static | default: "Static" | escape }}</button>
         {%- endif %}{% if used_cats contains "details" %}
-        <button class="filter" data-filter="details" role="tab" aria-selected="false">Details</button>
+        <button class="filter" data-filter="details" role="tab" aria-selected="false">{{ c.filters.details | default: "Details" | escape }}</button>
         {%- endif %}{% if used_cats contains "events" %}
-        <button class="filter" data-filter="events" role="tab" aria-selected="false">Events</button>
+        <button class="filter" data-filter="events" role="tab" aria-selected="false">{{ c.filters.events | default: "Events" | escape }}</button>
         {%- endif %}
       </div>
       <div class="gallery">

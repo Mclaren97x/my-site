@@ -686,7 +686,19 @@ h1, h2, h3 {
     repeating-linear-gradient(-20deg, transparent 0 60px, rgba(46, 123, 255, 0.06) 60px 62px),
     radial-gradient(ellipse at 80% 0%, #122a52 0%, #0b1424 40%, var(--bg) 75%);
 }
-.page-hero-inner { max-width: var(--max); margin: 0 auto; }
+.page-hero-inner { max-width: var(--max); margin: 0 auto; width: 100%; }
+/* Optional banner photo for the Portfolio and Packages pages (set in Pages CMS). */
+.page-hero.has-banner {
+  display: flex;
+  align-items: flex-end;
+  min-height: min(62vh, 560px);
+  padding-bottom: 56px;
+  background:
+    linear-gradient(90deg, rgba(11, 11, 12, 0.9) 0%, rgba(11, 11, 12, 0.55) 55%, rgba(11, 11, 12, 0.25) 100%),
+    linear-gradient(to top, var(--bg) 0%, transparent 35%),
+    var(--banner) center 65% / cover no-repeat,
+    var(--bg);
+}
 .page-hero h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); font-style: italic; }
 .packages-section { padding-top: 48px; }
 

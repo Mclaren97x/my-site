@@ -150,7 +150,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   submitBtn.disabled = true;
-  submitBtn.textContent = "Sending...";
+  submitBtn.textContent = form.dataset.sending;
   setStatus("pending", "");
 
   try {
@@ -165,14 +165,20 @@ form.addEventListener("submit", async (e) => {
     const result = await res.json().catch(() => ({}));
     if (!res.ok || String(result.success) === "false") throw new Error(result.message || res.statusText);
     form.reset();
-    setStatus("success", "Thanks! Your booking request was sent. I'll get back to you soon.");
+    statusEl.className = "form-status is-success";
+    statusEl.textContent = form.dataset.success;
   } catch (err) {
     const body = Object.entries(payload)
       .filter(([k]) => !k.startsWith("_"))
       .map(([k, v]) => `${k.replace("_", " ")}: ${v}`)
       .join("\n");
     const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setStatus("error", `Sorry, that didn't go through. Please <a href="${mailto}">email me directly</a> instead.`);
+    statusEl.className = "form-status is-error";
+    statusEl.textContent = form.dataset.error + " ";
+    const link = document.createElement("a");
+    link.href = mailto;
+    link.textContent = form.dataset.errorLink;
+    statusEl.append(link);
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = submitBtn.dataset.label;

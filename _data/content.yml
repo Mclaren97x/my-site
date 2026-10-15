@@ -3,6 +3,13 @@ seo_title: Speed Of Photography | Automotive Photography
 seo_description: 'Speed Of Photography: automotive photography for owners, builders, dealerships and events.
   Rolling shots, studio-style static shoots, details and car meets.'
 logo: /images/logo-small.png
+navigation:
+  about: About
+  portfolio: Portfolio
+  services: Services
+  book: Book a shoot
+  instagram: Instagram
+  email: Email
 hero:
   background: /images/hero-center.jpg
   eyebrow: Automotive photography
@@ -20,6 +27,12 @@ highlights:
   text: wheels, interiors, engine bays, the little things that makes your car special
 - title: Events
   text: meets, shows & track days
+filters:
+  all: All
+  rolling: Rolling
+  static: Static
+  details: Details
+  events: Events
 gallery:
   eyebrow: Portfolio
   heading: Selected work
@@ -110,6 +123,11 @@ portfolio:
     caption: Porsche crest
     category: details
     size: tall
+  seo_title: Portfolio
+  seo_description: The full automotive photography portfolio of Speed Of Photography.
+  banner: ''
+  book_button: Book a shoot
+  packages_button: See packages
 services:
   eyebrow: Services
   heading: What I shoot
@@ -169,6 +187,21 @@ contact:
   - Sale Listing Shoot
   - Event coverage
   - Not sure yet
+  email_label: Email
+  instagram_label: Instagram
+  form:
+    name_label: Name
+    email_label: Email
+    car_label: Car
+    car_placeholder: Year, make and model
+    type_label: Shoot type
+    addons_label: Add-ons (optional)
+    details_label: Details
+    details_placeholder: Location, dates, the look you're going for...
+    sending: Sending...
+    success: Thanks! Your booking request was sent. I'll get back to you soon.
+    error: Sorry, that didn't go through.
+    error_link: Email me directly instead.
 packages:
   eyebrow: Packages
   heading: Shoot packages
@@ -225,3 +258,7 @@ packages:
   - An extra location more than 15 minutes from the first location may have extra fees.
   - A deposit may be required to book.
   - Raw (unedited) photos are not included.
+  seo_title: Packages
+  seo_description: Automotive photo shoot packages and add-ons from Speed Of Photography.
+  banner: ''
+  addons_eyebrow: Extras

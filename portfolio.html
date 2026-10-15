@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Portfolio
-description: The full automotive photography portfolio of Speed Of Photography.
+content_key: portfolio
 permalink: /portfolio/
 # Photos come from the "portfolio" section of _data/content.yml (edit it in Pages CMS).
 ---
 {%- assign c = site.data.content -%}
 {%- assign base = site.baseurl -%}
 {%- assign pf = c.portfolio -%}
-    <section class="page-hero">
+    <section class="page-hero{% if pf.banner and pf.banner != "" %} has-banner{% endif %}"{% if pf.banner and pf.banner != "" %} style="--banner:url('{{ base }}{{ pf.banner }}')"{% endif %}>
       <div class="page-hero-inner">
         <p class="eyebrow">{{ pf.eyebrow | escape }}</p>
         <h1>{{ pf.heading | escape }}</h1>
@@ -18,16 +18,16 @@ permalink: /portfolio/
 
     <section class="section portfolio-section" aria-label="Photos">
       <div class="filters" role="tablist" aria-label="Filter photos">
-        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">{{ c.filters.all | default: "All" | escape }}</button>
         {%- assign used_cats = pf.photos | map: "category" %}
         {%- if used_cats contains "rolling" %}
-        <button class="filter" data-filter="rolling" role="tab" aria-selected="false">Rolling</button>
+        <button class="filter" data-filter="rolling" role="tab" aria-selected="false">{{ c.filters.rolling | default: "Rolling" | escape }}</button>
         {%- endif %}{% if used_cats contains "static" %}
-        <button class="filter" data-filter="static" role="tab" aria-selected="false">Static</button>
+        <button class="filter" data-filter="static" role="tab" aria-selected="false">{{ c.filters.static | default: "Static" | escape }}</button>
         {%- endif %}{% if used_cats contains "details" %}
-        <button class="filter" data-filter="details" role="tab" aria-selected="false">Details</button>
+        <button class="filter" data-filter="details" role="tab" aria-selected="false">{{ c.filters.details | default: "Details" | escape }}</button>
         {%- endif %}{% if used_cats contains "events" %}
-        <button class="filter" data-filter="events" role="tab" aria-selected="false">Events</button>
+        <button class="filter" data-filter="events" role="tab" aria-selected="false">{{ c.filters.events | default: "Events" | escape }}</button>
         {%- endif %}
       </div>
       <div class="gallery">
@@ -36,8 +36,8 @@ permalink: /portfolio/
         {%- endfor %}
       </div>
       <div class="section-cta">
-        <a href="{{ base }}/packages/#book" class="btn btn-primary">{{ c.hero.primary_button | escape }}</a>
-        <a href="{{ base }}/packages/" class="btn btn-ghost">{{ c.packages.home_button | default: "See packages" | escape }}</a>
+        <a href="{{ base }}/packages/#book" class="btn btn-primary">{{ pf.book_button | default: "Book a shoot" | escape }}</a>
+        <a href="{{ base }}/packages/" class="btn btn-ghost">{{ pf.packages_button | default: "See packages" | escape }}</a>
       </div>
     </section>
 

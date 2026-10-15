@@ -27,6 +27,17 @@ content:
         label: Logo (white on transparent PNG works best)
         type: image
 
+      - name: navigation
+        label: Menu & footer (every page)
+        type: object
+        fields:
+          - { name: about, label: About link, type: string }
+          - { name: portfolio, label: Portfolio link, type: string }
+          - { name: services, label: Services link, type: string }
+          - { name: book, label: Header button (opens the Packages page), type: string }
+          - { name: instagram, label: Footer Instagram link, type: string }
+          - { name: email, label: Footer Email link, type: string }
+
       - name: hero
         label: Top banner
         type: object
@@ -46,6 +57,16 @@ content:
         fields:
           - { name: title, label: Title, type: string }
           - { name: text, label: Text, type: string }
+
+      - name: filters
+        label: Photo filter buttons (home gallery & Portfolio page)
+        type: object
+        fields:
+          - { name: all, label: All, type: string }
+          - { name: rolling, label: Rolling, type: string }
+          - { name: static, label: Static, type: string }
+          - { name: details, label: Details, type: string }
+          - { name: events, label: Events, type: string }
 
       - name: gallery
         label: Home page gallery (highlights)
@@ -82,10 +103,15 @@ content:
         label: Portfolio page
         type: object
         fields:
+          - { name: seo_title, label: Browser tab / Google title, type: string }
+          - { name: seo_description, label: Google description, type: text }
+          - { name: banner, label: Banner photo at the top (optional), type: image }
           - { name: eyebrow, label: Small label, type: string }
           - { name: heading, label: Heading, type: string }
           - { name: intro, label: Intro text, type: text }
           - { name: home_button, label: Home page button text (under the gallery), type: string }
+          - { name: book_button, label: Bottom "book" button text, type: string }
+          - { name: packages_button, label: Bottom "packages" button text, type: string }
           - name: photos
             label: Photos
             type: object
@@ -153,6 +179,9 @@ content:
         label: Packages page
         type: object
         fields:
+          - { name: seo_title, label: Browser tab / Google title, type: string }
+          - { name: seo_description, label: Google description, type: text }
+          - { name: banner, label: Banner photo at the top (optional), type: image }
           - { name: eyebrow, label: Small label, type: string }
           - { name: heading, label: Heading, type: string }
           - { name: intro, label: Intro text, type: text }
@@ -165,6 +194,7 @@ content:
             fields:
               - { name: name, label: Package name (also used in the booking form), type: string }
               - { name: features, label: What's included, type: string, list: true }
+          - { name: addons_eyebrow, label: Add-ons small label, type: string }
           - { name: addons_heading, label: Add-ons heading, type: string }
           - { name: addons_intro, label: Add-ons intro text, type: text }
           - name: addons
@@ -195,6 +225,8 @@ content:
           - { name: heading, label: Heading, type: string }
           - { name: intro, label: Intro text, type: text }
           - { name: email, label: "Email (bookings go here; a new address needs one re-activation from FormSubmit)", type: string }
+          - { name: email_label, label: Email card label, type: string }
+          - { name: instagram_label, label: Instagram card label, type: string }
           - { name: instagram_handle, label: Instagram handle, type: string }
           - { name: instagram_url, label: Instagram link, type: string }
           - name: links
@@ -207,4 +239,20 @@ content:
               - { name: url, label: Link, type: string }
           - { name: note, label: Note under the cards, type: text }
           - { name: button, label: Send button text, type: string }
+          - name: form
+            label: Booking form wording
+            type: object
+            fields:
+              - { name: name_label, label: Name label, type: string }
+              - { name: email_label, label: Email label, type: string }
+              - { name: car_label, label: Car label, type: string }
+              - { name: car_placeholder, label: Car example text, type: string }
+              - { name: type_label, label: Shoot type label, type: string }
+              - { name: addons_label, label: Add-ons label, type: string }
+              - { name: details_label, label: Details label, type: string }
+              - { name: details_placeholder, label: Details example text, type: string }
+              - { name: sending, label: Button text while sending, type: string }
+              - { name: success, label: Message after a booking is sent, type: text }
+              - { name: error, label: Message if sending fails, type: string }
+              - { name: error_link, label: Email link text if sending fails, type: string }
           - { name: shoot_types, label: "Shoot type choices (match package names so 'Book this package' preselects them)", type: string, list: true }
