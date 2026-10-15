@@ -398,7 +398,7 @@ content:
       label: Photo
       type: image
     - name: caption
-      label: Caption
+      label: Caption (for photos also in Home gallery photos, the home caption is used automatically)
       type: string
     - name: category
       label: Filter category
@@ -442,7 +442,7 @@ content:
       label: Photo
       type: image
     - name: caption
-      label: Caption
+      label: Caption (also shown on the Portfolio page for the same photo)
       type: string
     - name: category
       label: Filter category
