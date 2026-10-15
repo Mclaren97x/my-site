@@ -187,7 +187,7 @@ form.addEventListener("submit", async (e) => {
 }
 
 // ---------- Reveal sections on scroll ----------
-const revealTargets = document.querySelectorAll(".section-head, .gallery, .service, .process li, .about-photo, .about-text, .contact-info, .contact-form, .package, .addon, .notes");
+const revealTargets = document.querySelectorAll(".section-head, .gallery, .service, .process li, .about-photo, .about-text, .contact-info, .contact-form, .package, .addon, .notes, .location");
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

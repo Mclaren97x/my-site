@@ -180,3 +180,35 @@ packages:
   seo_description: Automotive photo shoot packages and add-ons from Speed Of Photography.
   banner: /images/salt-flats-sunset.jpg
   addons_eyebrow: Extras
+locations:
+  eyebrow: Locations
+  heading: Where to shoot
+  intro: A few of my favorite spots, depending on the vibe you're going for. Mention one when you book,
+    or suggest your own.
+  map_button: View on map
+  places:
+  - name: ''
+    vibe: ''
+    description: ''
+    photo: ''
+    map_link: ''
+  - name: ''
+    vibe: ''
+    description: ''
+    photo: ''
+    map_link: ''
+  - name: ''
+    vibe: ''
+    description: ''
+    photo: ''
+    map_link: ''
+  - name: ''
+    vibe: ''
+    description: ''
+    photo: ''
+    map_link: ''
+  - name: ''
+    vibe: ''
+    description: ''
+    photo: ''
+    map_link: ''

@@ -34,7 +34,43 @@ permalink: /packages/
       </div>
     </section>
 
-    <section id="book" class="section section-alt contact">
+    <section class="section section-alt" aria-labelledby="addons-heading">
+      <div class="section-head">
+        <p class="eyebrow">{{ pk.addons_eyebrow | default: "Extras" | escape }}</p>
+        <h2 id="addons-heading">{{ pk.addons_heading | escape }}</h2>
+        <p class="section-sub">{{ pk.addons_intro | escape }}</p>
+      </div>
+      <div class="addons">
+        {%- for a in pk.addons %}
+        <article class="addon">
+          <span class="addon-icon" aria-hidden="true">
+            {%- case a.icon -%}
+            {%- when "location" -%}<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            {%- when "rush" -%}<svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M13 8l-3 5h4l-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 3h4" stroke="currentColor" stroke-width="1.6"/></svg>
+            {%- when "photos" -%}<svg viewBox="0 0 24 24"><rect x="6" y="3" width="15" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 7v12a1.5 1.5 0 0 0 1.5 1.5H17" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 13l3.5-4 3 3 2-2 2.5 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            {%- when "usb" -%}<svg viewBox="0 0 24 24"><rect x="4" y="9" width="12" height="8" rx="1.5" transform="rotate(-45 10 13)" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15 4l5 5-2.5 2.5-5-5z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            {%- else -%}<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg>
+            {%- endcase -%}
+          </span>
+          <h3>{{ a.name | escape }}</h3>
+          <p>{{ a.text | escape }}</p>
+        </article>
+        {%- endfor %}
+      </div>
+
+      {%- if pk.notes.size > 0 %}
+      <div class="notes">
+        <h3>{{ pk.notes_heading | escape }}</h3>
+        <ul>
+          {%- for n in pk.notes %}
+          <li>{{ n | escape }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+    </section>
+
+    <section id="book" class="section contact">
       <div class="section-head">
         <p class="eyebrow">{{ c.contact.eyebrow | escape }}</p>
         <h2>{{ c.contact.heading | escape }}</h2>
@@ -107,38 +143,35 @@ permalink: /packages/
       </div>
     </section>
 
-    <section class="section" aria-labelledby="addons-heading">
+    {%- assign lc = c.locations %}
+    {%- assign named_count = 0 %}
+    {%- for pl in lc.places %}{% if pl.name and pl.name != "" %}{% assign named_count = named_count | plus: 1 %}{% endif %}{% endfor %}
+    {%- comment %} Hidden until at least one location has a name (set them in Pages CMS). {% endcomment %}
+    {%- if named_count > 0 %}
+    <section class="section section-alt locations-section" aria-labelledby="locations-heading">
       <div class="section-head">
-        <p class="eyebrow">{{ pk.addons_eyebrow | default: "Extras" | escape }}</p>
-        <h2 id="addons-heading">{{ pk.addons_heading | escape }}</h2>
-        <p class="section-sub">{{ pk.addons_intro | escape }}</p>
+        <p class="eyebrow">{{ lc.eyebrow | escape }}</p>
+        <h2 id="locations-heading">{{ lc.heading | escape }}</h2>
+        <p class="section-sub">{{ lc.intro | escape }}</p>
       </div>
-      <div class="addons">
-        {%- for a in pk.addons %}
-        <article class="addon">
-          <span class="addon-icon" aria-hidden="true">
-            {%- case a.icon -%}
-            {%- when "location" -%}<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-            {%- when "rush" -%}<svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M13 8l-3 5h4l-3 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 3h4" stroke="currentColor" stroke-width="1.6"/></svg>
-            {%- when "photos" -%}<svg viewBox="0 0 24 24"><rect x="6" y="3" width="15" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 7v12a1.5 1.5 0 0 0 1.5 1.5H17" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 13l3.5-4 3 3 2-2 2.5 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-            {%- when "usb" -%}<svg viewBox="0 0 24 24"><rect x="4" y="9" width="12" height="8" rx="1.5" transform="rotate(-45 10 13)" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M15 4l5 5-2.5 2.5-5-5z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-            {%- else -%}<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8"/></svg>
-            {%- endcase -%}
-          </span>
-          <h3>{{ a.name | escape }}</h3>
-          <p>{{ a.text | escape }}</p>
+      <div class="locations">
+        {%- for pl in lc.places %}
+        {%- if pl.name and pl.name != "" %}
+        <article class="location">
+          {%- if pl.photo and pl.photo != "" %}
+          <div class="location-photo" style="--img:url('{{ base }}{{ pl.photo }}')" role="img" aria-label="{{ pl.name | escape }}"></div>
+          {%- endif %}
+          <div class="location-body">
+            {%- if pl.vibe and pl.vibe != "" %}<span class="vibe">{{ pl.vibe | escape }}</span>{% endif %}
+            <h3>{{ pl.name | escape }}</h3>
+            {%- if pl.description and pl.description != "" %}<p>{{ pl.description | escape }}</p>{% endif %}
+            {%- if pl.map_link and pl.map_link != "" %}
+            <a class="location-map" href="{{ pl.map_link | escape }}" target="_blank" rel="noopener">{{ lc.map_button | default: "View on map" | escape }} &rarr;</a>
+            {%- endif %}
+          </div>
         </article>
+        {%- endif %}
         {%- endfor %}
       </div>
-
-      {%- if pk.notes.size > 0 %}
-      <div class="notes">
-        <h3>{{ pk.notes_heading | escape }}</h3>
-        <ul>
-          {%- for n in pk.notes %}
-          <li>{{ n | escape }}</li>
-          {%- endfor %}
-        </ul>
-      </div>
-      {%- endif %}
     </section>
+    {%- endif %}

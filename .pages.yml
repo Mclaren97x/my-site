@@ -288,6 +288,45 @@ content:
       label: Notes
       type: text
       list: true
+  - name: locations
+    label: Recommended locations (Packages page, below booking; hidden until a location has a name)
+    type: object
+    fields:
+    - name: eyebrow
+      label: Small label
+      type: string
+    - name: heading
+      label: Heading
+      type: string
+    - name: intro
+      label: Intro text
+      type: text
+    - name: map_button
+      label: Map link text
+      type: string
+    - name: places
+      label: Locations
+      type: object
+      list:
+        collapsible:
+          collapsed: false
+          summary: '{name}'
+      fields:
+      - name: name
+        label: Location name (leave blank to hide this slot)
+        type: string
+      - name: vibe
+        label: Vibe (e.g. Moody & industrial)
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: photo
+        label: Photo (optional)
+        type: image
+      - name: map_link
+        label: Google Maps link (optional)
+        type: string
   - name: contact
     label: Booking & contact (bottom of the Packages page)
     type: object
