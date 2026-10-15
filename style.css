@@ -872,3 +872,40 @@ h1, h2, h3 {
 @media (max-width: 760px) {
   .location { flex-basis: 100%; }
 }
+
+/* Location photo switcher (main photo + seasonal thumbnails with credits) */
+.location-media { margin: 0; }
+.location-thumbs { display: flex; gap: 6px; padding: 8px 10px 0; }
+.location-thumb {
+  width: 54px;
+  height: 38px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  background: var(--img) center / cover no-repeat, var(--bg);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.location-thumb:hover { opacity: 1; }
+.location-thumb.is-active { opacity: 1; border-color: var(--accent); }
+.location-caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  align-items: baseline;
+  padding: 8px 12px 0;
+  min-height: 1.4em;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.location-season {
+  font-family: var(--display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+.location-season:empty { display: none; }
+.location-credit { color: var(--muted); text-decoration: underline; }
+.location-credit:hover { color: var(--text); }

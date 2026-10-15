@@ -202,3 +202,20 @@ if ("IntersectionObserver" in window) {
     io.observe(el);
   });
 }
+
+// ---------- Location photo switcher ----------
+document.querySelectorAll(".location-media").forEach((media) => {
+  const main = media.querySelector(".location-photo");
+  const season = media.querySelector(".location-season");
+  const credit = media.querySelector(".location-credit");
+  media.querySelectorAll(".location-thumb").forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      media.querySelectorAll(".location-thumb").forEach((t) => t.classList.toggle("is-active", t === thumb));
+      main.style.setProperty("--img", `url('${thumb.dataset.img}')`);
+      season.textContent = thumb.dataset.label || "";
+      credit.textContent = thumb.dataset.credit || "";
+      credit.hidden = !thumb.dataset.credit;
+      if (thumb.dataset.creditLink) credit.href = thumb.dataset.creditLink; else credit.removeAttribute("href");
+    });
+  });
+});

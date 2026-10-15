@@ -1,8 +1,7 @@
 business_name: Speed Of Photography
 seo_title: Speed Of Photography | Automotive Photography
-seo_description: "Speed Of Photography: automotive photography for owners,
-  builders, dealerships and events. Rolling shots, studio-style static shoots,
-  details and car meets."
+seo_description: 'Speed Of Photography: automotive photography for owners, builders, dealerships and events.
+  Rolling shots, studio-style static shoots, details and car meets.'
 logo: /images/logo-small.png
 navigation:
   about: About
@@ -16,20 +15,18 @@ hero:
   eyebrow: Automotive photography
   title_line_1: Capturing motion,
   title_line_2: even when it's standing still.
-  subtitle: Rolling shots, detail work and editorial-style shoots for owners,
-    shops, dealerships and events.
+  subtitle: Rolling shots, detail work and editorial-style shoots for owners, shops, dealerships and events.
   primary_button: Book a shoot
   secondary_button: See the work
 highlights:
-  - title: Rollers
-    text: car-to-car motion shots
-  - title: Static
-    text: location & night shoots
-  - title: Details
-    text: wheels, interiors, engine bays, the little things that makes your car
-      special
-  - title: Events
-    text: meets, shows & track days
+- title: Rollers
+  text: car-to-car motion shots
+- title: Static
+  text: location & night shoots
+- title: Details
+  text: wheels, interiors, engine bays, the little things that makes your car special
+- title: Events
+  text: meets, shows & track days
 filters:
   all: All
   rolling: Rolling
@@ -45,7 +42,7 @@ portfolio:
   banner: /images/salt-flats-sunset.jpg
   eyebrow: Portfolio
   heading: Full portfolio
-  intro: "More of my work: rolling shots, statics, details and events."
+  intro: 'More of my work: rolling shots, statics, details and events.'
   home_button: View full portfolio
   book_button: Book a shoot
   packages_button: See packages
@@ -53,44 +50,39 @@ services:
   eyebrow: Services
   heading: What I shoot
   items:
-    - title: Rolling shoots
-      text: Car-to-car motion photography with sharp subjects and blurred backgrounds
-        that make your car look fast standing still.
-    - title: Private commissions
-      text: A dedicated shoot for your car at locations picked to match its character,
-        from city streets at night to open back roads.
-    - title: Shops & dealerships
-      text: Clean, consistent listing and build-showcase photos that sell cars and
-        show off the work that went into them.
-    - title: Events & meets
-      text: Coverage of car meets, shows and track days, delivered fast so you can
-        post while the event is still trending.
+  - title: Rolling shoots
+    text: Car-to-car motion photography with sharp subjects and blurred backgrounds that make your car
+      look fast standing still.
+  - title: Private commissions
+    text: A dedicated shoot for your car at locations picked to match its character, from city streets
+      at night to open back roads.
+  - title: Shops & dealerships
+    text: Clean, consistent listing and build-showcase photos that sell cars and show off the work that
+      went into them.
+  - title: Events & meets
+    text: Coverage of car meets, shows and track days, delivered fast so you can post while the event
+      is still trending.
 process:
   eyebrow: How it works
   heading: From first message to final edits
   steps:
-    - title: Plan
-      text: Tell me about your car and the look you're after. We pick a location, time
-        and shot list together.
-    - title: Shoot
-      text: We meet on location. Rolling shots, statics and details, at the light that
-        suits your car best.
-    - title: Edit
-      text: Every selected photo is hand-edited for color, reflections and clean
-        backgrounds.
-    - title: Deliver
-      text: You get a private online gallery with full-resolution downloads, ready for
-        print and social.
+  - title: Plan
+    text: Tell me about your car and the look you're after. We pick a location, time and shot list together.
+  - title: Shoot
+    text: We meet on location. Rolling shots, statics and details, at the light that suits your car best.
+  - title: Edit
+    text: Every selected photo is hand-edited for color, reflections and clean backgrounds.
+  - title: Deliver
+    text: You get a private online gallery with full-resolution downloads, ready for print and social.
 about:
   photo: /images/me.jpg
   eyebrow: About
   heading: The person behind the lens
   paragraphs:
-    - My name's Jaxon, and I'm the photographer! I've loved cars my whole life,
-      and it's turned into a love of photographing them! I chase the designs,
-      light, and motion that makes each car special.
-    - Whether it's a daily driver you love, a build years in the making or a
-      showroom lineup, I'll make it look as good on screen as it does in person.
+  - My name's Jaxon, and I'm the photographer! I've loved cars my whole life, and it's turned into a love
+    of photographing them! I chase the designs, light, and motion that makes each car special.
+  - Whether it's a daily driver you love, a build years in the making or a showroom lineup, I'll make
+    it look as good on screen as it does in person.
   button: Work with me
 packages:
   seo_title: Packages
@@ -98,91 +90,105 @@ packages:
   banner: /images/salt-flats-sunset.jpg
   eyebrow: Packages
   heading: Shoot packages
-  intro: Pick the shoot that fits your car and what you need the photos for. Every
-    package includes hand-edited photos. Reach out for a quote.
+  intro: Pick the shoot that fits your car and what you need the photos for. Every package includes hand-edited
+    photos. Reach out for a quote.
   home_button: See packages
   button: Book this package
   items:
-    - name: Starter Shoot
-      features:
-        - 1 vehicle
-        - 30–45 minute shoot
-        - 10–15 edited photos
-        - 1 location
-    - name: Premium Shoot
-      features:
-        - 1 vehicle
-        - Up to 1 hour shoot
-        - 20–30 edited photos
-        - 1–2 locations
-        - Basic rolling shots included (if safe and possible)
-    - name: Dual Vehicle Shoot
-      features:
-        - 2 vehicles
-        - Up to 1.5 hours
-        - 25–40 edited photos
-        - 1–2 locations
-        - Mix of solo and together shots
-    - name: Sale Listing Shoot
-      features:
-        - 1 vehicle
-        - Up to 2 hours
-        - 40–50 edited photos
-        - 1–2 locations
-        - Perfect for online listings and ads
+  - name: Starter Shoot
+    features:
+    - 1 vehicle
+    - 30–45 minute shoot
+    - 10–15 edited photos
+    - 1 location
+  - name: Premium Shoot
+    features:
+    - 1 vehicle
+    - Up to 1 hour shoot
+    - 20–30 edited photos
+    - 1–2 locations
+    - Basic rolling shots included (if safe and possible)
+  - name: Dual Vehicle Shoot
+    features:
+    - 2 vehicles
+    - Up to 1.5 hours
+    - 25–40 edited photos
+    - 1–2 locations
+    - Mix of solo and together shots
+  - name: Sale Listing Shoot
+    features:
+    - 1 vehicle
+    - Up to 2 hours
+    - 40–50 edited photos
+    - 1–2 locations
+    - Perfect for online listings and ads
   addons_eyebrow: Extras
   addons_heading: Add-ons
   addons_intro: Add any of these to a package when you book.
   addons:
-    - name: Extra location
-      text: Add another spot to your shoot.
-      icon: location
-    - name: Rush edits
-      text: Edited photos delivered within 24–48 hours.
-      icon: rush
-    - name: Extra edited photos
-      text: 5 more hand-edited photos.
-      icon: photos
-    - name: USB delivery
-      text: Your photos delivered on a USB drive.
-      icon: usb
+  - name: Extra location
+    text: Add another spot to your shoot.
+    icon: location
+  - name: Rush edits
+    text: Edited photos delivered within 24–48 hours.
+    icon: rush
+  - name: Extra edited photos
+    text: 5 more hand-edited photos.
+    icon: photos
+  - name: USB delivery
+    text: Your photos delivered on a USB drive.
+    icon: usb
   notes_heading: Good to know
   notes:
-    - Travel farther than 30 minutes from Sandy, UT may require a fee.
-    - An extra location more than 15 minutes from the first location may have
-      extra fees.
-    - A deposit may be required to book.
-    - Raw (unedited) photos are not included.
+  - Travel farther than 30 minutes from Sandy, UT may require a fee.
+  - An extra location more than 15 minutes from the first location may have extra fees.
+  - A deposit may be required to book.
+  - Raw (unedited) photos are not included.
 locations:
   eyebrow: Locations
   heading: Where to shoot
-  intro: A few of my favorite spots, depending on the vibe you're going for.
-    Mention one when you book, or suggest your own.
+  intro: A few of my favorite spots, depending on the vibe you're going for. Mention one when you book,
+    or suggest your own.
   map_button: View on map
   places:
-    - name: Tibble Fork Reservoir
-      vibe: Natural, Mountainous
-      description: Man-made reservoir in American Fork Canyon with nice mountainous
-        backdrops, and a beautiful drive up.
-      map_link: https://www.google.com/maps/place/Tibble+Fork+Reservoir/@40.4824048,-111.6448453,296m/data=!3m2!1e3!4b1!4m6!3m5!1s0x875277e871142ce5:0x17d4525eb61ae2cc!8m2!3d40.4823404!4d-111.6440872!16s%2Fg%2F1hhgv1vkh?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D
-    - {}
-    - {}
-    - {}
-    - {}
+  - name: Tibble Fork Reservoir
+    vibe: Natural, Mountainous
+    description: Man-made reservoir in American Fork Canyon with nice mountainous backdrops, and a beautiful
+      drive up.
+    map_link: https://www.google.com/maps/place/Tibble+Fork+Reservoir/@40.4824048,-111.6448453,296m/data=!3m2!1e3!4b1!4m6!3m5!1s0x875277e871142ce5:0x17d4525eb61ae2cc!8m2!3d40.4823404!4d-111.6440872!16s%2Fg%2F1hhgv1vkh?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D
+    photo: /images/tibble-fork-supra.jpg
+    photo_label: Winter
+    more_photos:
+    - photo: /images/tibble-fork-summer-parking.jpg
+      label: Summer
+      credit: 'Photo: An Errant Knight, CC BY-SA 4.0 (resized)'
+      credit_link: https://commons.wikimedia.org/wiki/File:West_at_Tibble_Fork_and_parking_lot,_Aug_17.jpg
+    - photo: /images/tibble-fork-summer-dam.jpg
+      label: Summer
+      credit: 'Photo: An Errant Knight, CC BY-SA 4.0 (resized)'
+      credit_link: https://commons.wikimedia.org/wiki/File:Tibble_Fork_Reservoir_Dam,_Aug_17.jpg
+    - photo: /images/tibble-fork-fall-usfs.jpg
+      label: Fall
+      credit: 'Photo: U.S. Forest Service (public domain)'
+      credit_link: https://commons.wikimedia.org/wiki/File:Tibble_Fork_GN_(21234030558).jpg
+  - {}
+  - {}
+  - {}
+  - {}
 contact:
   eyebrow: Contact me
   heading: Book a shoot
-  intro: Tell me about your car and what you have in mind. I'll get back to you
-    with availability and a quote.
+  intro: Tell me about your car and what you have in mind. I'll get back to you with availability and
+    a quote.
   email: speedofphotography@gmail.com
   email_label: Email
   instagram_label: Instagram
-  instagram_handle: "@speedofphotography"
+  instagram_handle: '@speedofphotography'
   instagram_url: https://www.instagram.com/speedofphotography/
   links:
-    - label: ShotFinder
-      text: View my ShotFinder profile
-      url: https://www.theshotfinder.com/photographers/jaxon-cathey
+  - label: ShotFinder
+    text: View my ShotFinder profile
+    url: https://www.theshotfinder.com/photographers/jaxon-cathey
   note: DMs are open. Instagram is the quickest way to see my latest work.
   button: Send inquiry
   form:
@@ -199,9 +205,9 @@ contact:
     error: Sorry, that didn't go through.
     error_link: Email me directly instead.
   shoot_types:
-    - Starter Shoot
-    - Premium Shoot
-    - Dual Vehicle Shoot
-    - Sale Listing Shoot
-    - Event coverage
-    - Not sure yet
+  - Starter Shoot
+  - Premium Shoot
+  - Dual Vehicle Shoot
+  - Sale Listing Shoot
+  - Event coverage
+  - Not sure yet

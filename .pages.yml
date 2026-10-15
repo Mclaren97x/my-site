@@ -324,6 +324,29 @@ content:
       - name: photo
         label: Photo (optional)
         type: image
+      - name: photo_label
+        label: Main photo label (e.g. Winter)
+        type: string
+      - name: more_photos
+        label: More photos (shown as thumbnails visitors can click)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{label}'
+        fields:
+        - name: photo
+          label: Photo
+          type: image
+        - name: label
+          label: Label (e.g. Summer)
+          type: string
+        - name: credit
+          label: Photo credit (required for photos you didn't take)
+          type: string
+        - name: credit_link
+          label: Credit link (photo's source page)
+          type: string
       - name: map_link
         label: Google Maps link (optional)
         type: string

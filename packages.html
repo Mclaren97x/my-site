@@ -159,7 +159,21 @@ permalink: /packages/
         {%- if pl.name and pl.name != "" %}
         <article class="location">
           {%- if pl.photo and pl.photo != "" %}
-          <div class="location-photo" style="--img:url('{{ base }}{{ pl.photo }}')" role="img" aria-label="{{ pl.name | escape }}"></div>
+          <figure class="location-media">
+            <div class="location-photo" style="--img:url('{{ base }}{{ pl.photo }}')" role="img" aria-label="{{ pl.name | escape }}{% if pl.photo_label %}, {{ pl.photo_label | escape }}{% endif %}"></div>
+            {%- if pl.more_photos.size > 0 %}
+            <div class="location-thumbs" role="group" aria-label="More photos of {{ pl.name | escape }}">
+              <button type="button" class="location-thumb is-active" style="--img:url('{{ base }}{{ pl.photo }}')" data-img="{{ base }}{{ pl.photo }}" data-label="{{ pl.photo_label | escape }}" data-credit="" data-credit-link="" aria-label="{{ pl.photo_label | default: 'Main photo' | escape }}"></button>
+              {%- for mp in pl.more_photos %}{% if mp.photo and mp.photo != "" %}
+              <button type="button" class="location-thumb" style="--img:url('{{ base }}{{ mp.photo }}')" data-img="{{ base }}{{ mp.photo }}" data-label="{{ mp.label | escape }}" data-credit="{{ mp.credit | escape }}" data-credit-link="{{ mp.credit_link | escape }}" aria-label="{{ mp.label | default: 'Photo' | escape }}"></button>
+              {%- endif %}{% endfor %}
+            </div>
+            {%- endif %}
+            <figcaption class="location-caption">
+              <span class="location-season">{{ pl.photo_label | escape }}</span>
+              <a class="location-credit" href="" target="_blank" rel="noopener" hidden></a>
+            </figcaption>
+          </figure>
           {%- endif %}
           <div class="location-body">
             {%- if pl.vibe and pl.vibe != "" %}<span class="vibe">{{ pl.vibe | escape }}</span>{% endif %}
