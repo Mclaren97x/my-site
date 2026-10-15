@@ -43,3 +43,55 @@ photos:
     caption: Porsche crest
     category: details
     size: tall
+  - image: /images/porsche-911-carrera-rolling.jpg
+    caption: Porsche 911 Carrera rolling
+    category: rolling
+    size: tall
+  - image: /images/mclaren-senna-warehouse.jpg
+    caption: McLaren Senna
+    category: static
+    size: normal
+  - image: /images/bmw-s1000rr-salt-flats.jpg
+    caption: BMW S1000RR on the salt flats
+    category: static
+    size: tall
+  - image: /images/ford-gt40-meet.jpg
+    caption: Ford GT40 at a car meet
+    category: events
+    size: tall
+  - image: /images/carrera-gt-garage.jpg
+    caption: Porsche Carrera GT
+    category: static
+    size: tall
+  - image: /images/ferrari-interior-seats.jpg
+    caption: Ferrari interior
+    category: details
+    size: tall
+  - image: /images/yamaha-r6-rolling.jpg
+    caption: Yamaha R6 rolling
+    category: rolling
+    size: tall
+  - image: /images/corvette-c7-rolling.jpg
+    caption: Chevrolet Corvette C7 Stingray rolling
+    category: rolling
+    size: tall
+  - image: /images/mclaren-solus-gt-wheel.jpg
+    caption: McLaren Solus GT
+    category: details
+    size: tall
+  - image: /images/mclaren-caliper.jpg
+    caption: McLaren brake caliper
+    category: details
+    size: tall
+  - image: /images/mclaren-solus-gt-badge.jpg
+    caption: McLaren Solus GT badge
+    category: details
+    size: tall
+  - image: /images/ferrari-458-speciale-a-badge.jpg
+    caption: Ferrari 458 Speciale A badge
+    category: details
+    size: tall
+  - image: /images/lamborghini-taillight.jpg
+    caption: Lamborghini taillight
+    category: details
+    size: tall
