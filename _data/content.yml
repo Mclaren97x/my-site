@@ -125,7 +125,7 @@ portfolio:
     size: tall
   seo_title: Portfolio
   seo_description: The full automotive photography portfolio of Speed Of Photography.
-  banner: ''
+  banner: /images/salt-flats-sunset.jpg
   book_button: Book a shoot
   packages_button: See packages
 services:
@@ -260,5 +260,5 @@ packages:
   - Raw (unedited) photos are not included.
   seo_title: Packages
   seo_description: Automotive photo shoot packages and add-ons from Speed Of Photography.
-  banner: ''
+  banner: /images/salt-flats-sunset.jpg
   addons_eyebrow: Extras

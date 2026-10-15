@@ -694,8 +694,8 @@ h1, h2, h3 {
   min-height: min(62vh, 560px);
   padding-bottom: 56px;
   background:
-    linear-gradient(90deg, rgba(11, 11, 12, 0.9) 0%, rgba(11, 11, 12, 0.55) 55%, rgba(11, 11, 12, 0.25) 100%),
-    linear-gradient(to top, var(--bg) 0%, transparent 35%),
+    linear-gradient(90deg, rgba(11, 11, 12, 0.7) 0%, rgba(11, 11, 12, 0.3) 50%, rgba(11, 11, 12, 0) 100%),
+    linear-gradient(to top, var(--bg) 0%, rgba(11, 11, 12, 0.35) 30%, transparent 55%),
     var(--banner) center 65% / cover no-repeat,
     var(--bg);
 }
