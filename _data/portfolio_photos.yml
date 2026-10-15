@@ -1,0 +1,44 @@
+- image: /images/huracan-above.jpg
+  caption: Huracán from above
+  category: static
+  size: tall
+- image: /images/laferrari-doors-up.jpg
+  caption: LaFerrari, doors up
+  category: static
+  size: tall
+- image: /images/porsche-993-turbo.jpg
+  caption: 993 Turbo
+  category: static
+  size: tall
+- image: /images/aventador-night.jpg
+  caption: Aventador after dark
+  category: static
+  size: tall
+- image: /images/emira-track-rolling.jpg
+  caption: Emira at speed
+  category: rolling
+  size: normal
+- image: /images/gt4-garage.jpg
+  caption: GT4 in the tire garage
+  category: static
+  size: normal
+- image: /images/evo-x-salt-flats.jpg
+  caption: Evo X on the salt flats
+  category: static
+  size: normal
+- image: /images/miata-salt-flats.jpg
+  caption: Miata on the salt flats
+  category: static
+  size: normal
+- image: /images/emira-pit-lane.jpg
+  caption: Emira in pit lane
+  category: events
+  size: tall
+- image: /images/lamborghini-interior.jpg
+  caption: Lamborghini interior
+  category: details
+  size: tall
+- image: /images/porsche-crest.jpg
+  caption: Porsche crest
+  category: details
+  size: tall

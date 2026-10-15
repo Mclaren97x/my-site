@@ -45,7 +45,7 @@ layout: default
       </div>
       <div class="filters" role="tablist" aria-label="Filter gallery">
         <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">{{ c.filters.all | default: "All" | escape }}</button>
-        {%- assign used_cats = c.gallery.photos | map: "category" %}
+        {%- assign used_cats = site.data.gallery_photos | map: "category" %}
         {%- if used_cats contains "rolling" %}
         <button class="filter" data-filter="rolling" role="tab" aria-selected="false">{{ c.filters.rolling | default: "Rolling" | escape }}</button>
         {%- endif %}{% if used_cats contains "static" %}
@@ -57,7 +57,7 @@ layout: default
         {%- endif %}
       </div>
       <div class="gallery">
-        {%- for p in c.gallery.photos %}
+        {%- for p in site.data.gallery_photos %}
         <figure class="shot{% if p.size == 'wide' %} wide{% elsif p.size == 'tall' %} tall{% endif %}" data-cat="{{ p.category | escape }}"{% if p.image and p.image != "" %} style="--img:url('{{ base }}{{ p.image }}')"{% endif %}><figcaption>{{ p.caption | escape }}</figcaption></figure>
         {%- endfor %}
       </div>
