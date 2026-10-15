@@ -106,6 +106,10 @@ contact:
   email: speedofphotography@gmail.com
   instagram_handle: '@speedofphotography'
   instagram_url: https://www.instagram.com/speedofphotography/
+  links:
+  - label: ShotFinder
+    text: View my ShotFinder profile
+    url: https://www.theshotfinder.com/photographers/jaxon-cathey
   note: DMs are open. Instagram is the quickest way to see my latest work.
   button: Send inquiry
   shoot_types:

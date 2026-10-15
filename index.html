@@ -116,6 +116,15 @@ layout: default
             <strong>{{ c.contact.instagram_handle | escape }}</strong>
           </span>
         </a>
+        {%- for l in c.contact.links %}
+        <a class="contact-card" href="{{ l.url | escape }}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.2 1.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.2-1.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>
+            <small>{{ l.label | escape }}</small>
+            <strong>{{ l.text | escape }}</strong>
+          </span>
+        </a>
+        {%- endfor %}
         <p class="contact-note">{{ c.contact.note | escape }}</p>
       </div>
       <form class="contact-form" id="contact-form" data-email="{{ c.contact.email | escape }}">

@@ -167,6 +167,14 @@ content:
           - { name: email, label: "Email (bookings go here; a new address needs one re-activation from FormSubmit)", type: string }
           - { name: instagram_handle, label: Instagram handle, type: string }
           - { name: instagram_url, label: Instagram link, type: string }
+          - name: links
+            label: Other profile links (shown as cards under Instagram)
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Small label (e.g. ShotFinder), type: string }
+              - { name: text, label: Card text, type: string }
+              - { name: url, label: Link, type: string }
           - { name: note, label: Note under the cards, type: text }
           - { name: button, label: Send button text, type: string }
           - { name: shoot_types, label: "Shoot type choices (match package names so 'Book this package' preselects them)", type: string, list: true }
