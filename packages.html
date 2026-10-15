@@ -85,19 +85,21 @@ permalink: /packages/
         {%- for pl in lc.places %}
         {%- if pl.name and pl.name != "" %}
         <article class="location">
+          {%- comment %} Extra photos and labels live in _data/location_photos.yml, matched by location name. {% endcomment %}
+          {%- assign lp = site.data.location_photos.locations | where: "location", pl.name | first %}
           {%- if pl.photo and pl.photo != "" %}
           <figure class="location-media">
-            <div class="location-photo" style="--img:url('{{ base }}{{ pl.photo }}')" role="img" aria-label="{{ pl.name | escape }}{% if pl.photo_label %}, {{ pl.photo_label | escape }}{% endif %}"></div>
-            {%- if pl.more_photos.size > 0 %}
+            <div class="location-photo" style="--img:url('{{ base }}{{ pl.photo }}')" role="img" aria-label="{{ pl.name | escape }}{% if lp.photo_label %}, {{ lp.photo_label | escape }}{% endif %}"></div>
+            {%- if lp.more_photos.size > 0 %}
             <div class="location-thumbs" role="group" aria-label="More photos of {{ pl.name | escape }}">
-              <button type="button" class="location-thumb is-active" style="--img:url('{{ base }}{{ pl.photo }}')" data-img="{{ base }}{{ pl.photo }}" data-label="{{ pl.photo_label | escape }}" data-credit="" data-credit-link="" aria-label="{{ pl.photo_label | default: 'Main photo' | escape }}"></button>
-              {%- for mp in pl.more_photos %}{% if mp.photo and mp.photo != "" %}
+              <button type="button" class="location-thumb is-active" style="--img:url('{{ base }}{{ pl.photo }}')" data-img="{{ base }}{{ pl.photo }}" data-label="{{ lp.photo_label | escape }}" data-credit="" data-credit-link="" aria-label="{{ lp.photo_label | default: 'Main photo' | escape }}"></button>
+              {%- for mp in lp.more_photos %}{% if mp.photo and mp.photo != "" %}
               <button type="button" class="location-thumb" style="--img:url('{{ base }}{{ mp.photo }}')" data-img="{{ base }}{{ mp.photo }}" data-label="{{ mp.label | escape }}" data-credit="{{ mp.credit | escape }}" data-credit-link="{{ mp.credit_link | escape }}" aria-label="{{ mp.label | default: 'Photo' | escape }}"></button>
               {%- endif %}{% endfor %}
             </div>
             {%- endif %}
             <figcaption class="location-caption">
-              <span class="location-season">{{ pl.photo_label | escape }}</span>
+              <span class="location-season">{{ lp.photo_label | escape }}</span>
               <a class="location-credit" href="" target="_blank" rel="noopener" hidden></a>
             </figcaption>
           </figure>

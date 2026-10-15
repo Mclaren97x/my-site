@@ -1,0 +1,23 @@
+locations:
+- location: Tibble Fork Reservoir
+  photo_label: Winter
+  more_photos:
+  - photo: /images/tibble-fork-summer-parking.jpg
+    label: Summer
+    credit: 'Photo: An Errant Knight, CC BY-SA 4.0 (resized)'
+    credit_link: https://commons.wikimedia.org/wiki/File:West_at_Tibble_Fork_and_parking_lot,_Aug_17.jpg
+  - photo: /images/tibble-fork-summer-dam.jpg
+    label: Summer
+    credit: 'Photo: An Errant Knight, CC BY-SA 4.0 (resized)'
+    credit_link: https://commons.wikimedia.org/wiki/File:Tibble_Fork_Reservoir_Dam,_Aug_17.jpg
+- location: Salt Flats
+  photo_label: Ford Mustang
+  more_photos:
+  - photo: /images/evo-x-salt-flats.jpg
+    label: Mitsubishi Evo X
+    credit: ''
+    credit_link: ''
+  - photo: /images/miata-salt-flats.jpg
+    label: Mazda Miata
+    credit: ''
+    credit_link: ''
