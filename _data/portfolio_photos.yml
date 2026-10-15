@@ -1,45 +1,45 @@
 photos:
-- image: /images/huracan-above.jpg
-  caption: Lamborghini Huracán
-  category: static
-  size: tall
-- image: /images/laferrari-doors-up.jpg
-  caption: Ferrari LaFerrari
-  category: static
-  size: tall
-- image: /images/porsche-993-turbo.jpg
-  caption: Porsche 911 993 Turbo
-  category: static
-  size: tall
-- image: /images/aventador-night.jpg
-  caption: Lamborghini Aventador SV at night
-  category: static
-  size: tall
-- image: /images/emira-track-rolling.jpg
-  caption: Emira at speed
-  category: rolling
-  size: normal
-- image: /images/gt4-garage.jpg
-  caption: GT4 in the tire garage
-  category: static
-  size: normal
-- image: /images/evo-x-salt-flats.jpg
-  caption: Mitsubishi Evo X on the salt flats
-  category: static
-  size: normal
-- image: /images/miata-salt-flats.jpg
-  caption: Mazda Miata on the salt flats
-  category: static
-  size: normal
-- image: /images/emira-pit-lane.jpg
-  caption: Lotus Emira in pit lane
-  category: events
-  size: tall
-- image: /images/lamborghini-interior.jpg
-  caption: Lamborghini Aventador SV interior
-  category: details
-  size: tall
-- image: /images/porsche-crest.jpg
-  caption: Porsche crest
-  category: details
-  size: tall
+  - image: /images/huracan-above.jpg
+    caption: Lamborghini Huracán
+    category: static
+    size: tall
+  - image: /images/laferrari-doors-up.jpg
+    caption: Ferrari LaFerrari
+    category: static
+    size: tall
+  - image: /images/porsche-993-turbo.jpg
+    caption: Porsche 911 993 Turbo
+    category: static
+    size: tall
+  - image: /images/aventador-night.jpg
+    caption: Lamborghini Aventador SV at night
+    category: static
+    size: tall
+  - image: /images/emira-track-rolling.jpg
+    caption: Lotus Emira on track
+    category: rolling
+    size: normal
+  - image: /images/gt4-garage.jpg
+    caption: Lotus Emira GT4 in the garage
+    category: static
+    size: normal
+  - image: /images/evo-x-salt-flats.jpg
+    caption: Mitsubishi Evo X on the salt flats
+    category: static
+    size: normal
+  - image: /images/miata-salt-flats.jpg
+    caption: Mazda Miata on the salt flats
+    category: static
+    size: normal
+  - image: /images/emira-pit-lane.jpg
+    caption: Lotus Emira in pit lane
+    category: events
+    size: tall
+  - image: /images/lamborghini-interior.jpg
+    caption: Lamborghini Aventador SV interior
+    category: details
+    size: tall
+  - image: /images/porsche-crest.jpg
+    caption: Porsche crest
+    category: details
+    size: tall
