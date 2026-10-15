@@ -44,7 +44,7 @@ photos:
     category: details
     size: tall
   - image: /images/porsche-911-carrera-rolling.jpg
-    caption: Porsche 911 Carrera rolling
+    caption: Porsche 911 Carrera
     category: rolling
     size: tall
   - image: /images/mclaren-senna-warehouse.jpg
@@ -56,7 +56,7 @@ photos:
     category: static
     size: tall
   - image: /images/ford-gt40-meet.jpg
-    caption: Ford GT40 at a car meet
+    caption: "Ford GT40 "
     category: events
     size: tall
   - image: /images/carrera-gt-garage.jpg
