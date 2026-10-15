@@ -70,7 +70,54 @@ permalink: /packages/
       {%- endif %}
     </section>
 
-    <section id="book" class="section contact">
+    {%- assign lc = c.locations %}
+    {%- assign named_count = 0 %}
+    {%- for pl in lc.places %}{% if pl.name and pl.name != "" %}{% assign named_count = named_count | plus: 1 %}{% endif %}{% endfor %}
+    {%- comment %} Hidden until at least one location has a name (set them in Pages CMS). {% endcomment %}
+    {%- if named_count > 0 %}
+    <section class="section locations-section" aria-labelledby="locations-heading">
+      <div class="section-head">
+        <p class="eyebrow">{{ lc.eyebrow | escape }}</p>
+        <h2 id="locations-heading">{{ lc.heading | escape }}</h2>
+        <p class="section-sub">{{ lc.intro | escape }}</p>
+      </div>
+      <div class="locations">
+        {%- for pl in lc.places %}
+        {%- if pl.name and pl.name != "" %}
+        <article class="location">
+          {%- if pl.photo and pl.photo != "" %}
+          <figure class="location-media">
+            <div class="location-photo" style="--img:url('{{ base }}{{ pl.photo }}')" role="img" aria-label="{{ pl.name | escape }}{% if pl.photo_label %}, {{ pl.photo_label | escape }}{% endif %}"></div>
+            {%- if pl.more_photos.size > 0 %}
+            <div class="location-thumbs" role="group" aria-label="More photos of {{ pl.name | escape }}">
+              <button type="button" class="location-thumb is-active" style="--img:url('{{ base }}{{ pl.photo }}')" data-img="{{ base }}{{ pl.photo }}" data-label="{{ pl.photo_label | escape }}" data-credit="" data-credit-link="" aria-label="{{ pl.photo_label | default: 'Main photo' | escape }}"></button>
+              {%- for mp in pl.more_photos %}{% if mp.photo and mp.photo != "" %}
+              <button type="button" class="location-thumb" style="--img:url('{{ base }}{{ mp.photo }}')" data-img="{{ base }}{{ mp.photo }}" data-label="{{ mp.label | escape }}" data-credit="{{ mp.credit | escape }}" data-credit-link="{{ mp.credit_link | escape }}" aria-label="{{ mp.label | default: 'Photo' | escape }}"></button>
+              {%- endif %}{% endfor %}
+            </div>
+            {%- endif %}
+            <figcaption class="location-caption">
+              <span class="location-season">{{ pl.photo_label | escape }}</span>
+              <a class="location-credit" href="" target="_blank" rel="noopener" hidden></a>
+            </figcaption>
+          </figure>
+          {%- endif %}
+          <div class="location-body">
+            {%- if pl.vibe and pl.vibe != "" %}<span class="vibe">{{ pl.vibe | escape }}</span>{% endif %}
+            <h3>{{ pl.name | escape }}</h3>
+            {%- if pl.description and pl.description != "" %}<p>{{ pl.description | escape }}</p>{% endif %}
+            {%- if pl.map_link and pl.map_link != "" %}
+            <a class="location-map" href="{{ pl.map_link | escape }}" target="_blank" rel="noopener">{{ lc.map_button | default: "View on map" | escape }} &rarr;</a>
+            {%- endif %}
+          </div>
+        </article>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endif %}
+
+    <section id="book" class="section section-alt contact">
       <div class="section-head">
         <p class="eyebrow">{{ c.contact.eyebrow | escape }}</p>
         <h2>{{ c.contact.heading | escape }}</h2>
@@ -142,50 +189,3 @@ permalink: /packages/
       </form>
       </div>
     </section>
-
-    {%- assign lc = c.locations %}
-    {%- assign named_count = 0 %}
-    {%- for pl in lc.places %}{% if pl.name and pl.name != "" %}{% assign named_count = named_count | plus: 1 %}{% endif %}{% endfor %}
-    {%- comment %} Hidden until at least one location has a name (set them in Pages CMS). {% endcomment %}
-    {%- if named_count > 0 %}
-    <section class="section section-alt locations-section" aria-labelledby="locations-heading">
-      <div class="section-head">
-        <p class="eyebrow">{{ lc.eyebrow | escape }}</p>
-        <h2 id="locations-heading">{{ lc.heading | escape }}</h2>
-        <p class="section-sub">{{ lc.intro | escape }}</p>
-      </div>
-      <div class="locations">
-        {%- for pl in lc.places %}
-        {%- if pl.name and pl.name != "" %}
-        <article class="location">
-          {%- if pl.photo and pl.photo != "" %}
-          <figure class="location-media">
-            <div class="location-photo" style="--img:url('{{ base }}{{ pl.photo }}')" role="img" aria-label="{{ pl.name | escape }}{% if pl.photo_label %}, {{ pl.photo_label | escape }}{% endif %}"></div>
-            {%- if pl.more_photos.size > 0 %}
-            <div class="location-thumbs" role="group" aria-label="More photos of {{ pl.name | escape }}">
-              <button type="button" class="location-thumb is-active" style="--img:url('{{ base }}{{ pl.photo }}')" data-img="{{ base }}{{ pl.photo }}" data-label="{{ pl.photo_label | escape }}" data-credit="" data-credit-link="" aria-label="{{ pl.photo_label | default: 'Main photo' | escape }}"></button>
-              {%- for mp in pl.more_photos %}{% if mp.photo and mp.photo != "" %}
-              <button type="button" class="location-thumb" style="--img:url('{{ base }}{{ mp.photo }}')" data-img="{{ base }}{{ mp.photo }}" data-label="{{ mp.label | escape }}" data-credit="{{ mp.credit | escape }}" data-credit-link="{{ mp.credit_link | escape }}" aria-label="{{ mp.label | default: 'Photo' | escape }}"></button>
-              {%- endif %}{% endfor %}
-            </div>
-            {%- endif %}
-            <figcaption class="location-caption">
-              <span class="location-season">{{ pl.photo_label | escape }}</span>
-              <a class="location-credit" href="" target="_blank" rel="noopener" hidden></a>
-            </figcaption>
-          </figure>
-          {%- endif %}
-          <div class="location-body">
-            {%- if pl.vibe and pl.vibe != "" %}<span class="vibe">{{ pl.vibe | escape }}</span>{% endif %}
-            <h3>{{ pl.name | escape }}</h3>
-            {%- if pl.description and pl.description != "" %}<p>{{ pl.description | escape }}</p>{% endif %}
-            {%- if pl.map_link and pl.map_link != "" %}
-            <a class="location-map" href="{{ pl.map_link | escape }}" target="_blank" rel="noopener">{{ lc.map_button | default: "View on map" | escape }} &rarr;</a>
-            {%- endif %}
-          </div>
-        </article>
-        {%- endif %}
-        {%- endfor %}
-      </div>
-    </section>
-    {%- endif %}
