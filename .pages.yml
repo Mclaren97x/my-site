@@ -385,72 +385,86 @@ content:
   type: file
   path: _data/portfolio_photos.yml
   format: yaml
-  list: true
   fields:
-  - name: image
-    label: Photo
-    type: image
-  - name: caption
-    label: Caption
-    type: string
-  - name: category
-    label: Filter category
-    type: select
-    options:
-      values:
-      - name: rolling
-        label: Rolling
-      - name: static
-        label: Static
-      - name: details
-        label: Details
-      - name: events
-        label: Events
-  - name: size
-    label: Tile size
-    type: select
-    options:
-      values:
-      - name: normal
-        label: Normal
-      - name: wide
-        label: Wide (2 columns)
-      - name: tall
-        label: Tall (2 rows)
+  - name: photos
+    label: Photos
+    type: object
+    list:
+      collapsible:
+        collapsed: false
+        summary: '{caption}'
+    fields:
+    - name: image
+      label: Photo
+      type: image
+    - name: caption
+      label: Caption
+      type: string
+    - name: category
+      label: Filter category
+      type: select
+      options:
+        values:
+        - name: rolling
+          label: Rolling
+        - name: static
+          label: Static
+        - name: details
+          label: Details
+        - name: events
+          label: Events
+    - name: size
+      label: Tile size
+      type: select
+      options:
+        values:
+        - name: normal
+          label: Normal
+        - name: wide
+          label: Wide (2 columns)
+        - name: tall
+          label: Tall (2 rows)
 - name: gallery_photos
   label: Home gallery photos
   type: file
   path: _data/gallery_photos.yml
   format: yaml
-  list: true
   fields:
-  - name: image
-    label: Photo
-    type: image
-  - name: caption
-    label: Caption
-    type: string
-  - name: category
-    label: Filter category
-    type: select
-    options:
-      values:
-      - name: rolling
-        label: Rolling
-      - name: static
-        label: Static
-      - name: details
-        label: Details
-      - name: events
-        label: Events
-  - name: size
-    label: Tile size
-    type: select
-    options:
-      values:
-      - name: normal
-        label: Normal
-      - name: wide
-        label: Wide (2 columns)
-      - name: tall
-        label: Tall (2 rows)
+  - name: photos
+    label: Photos
+    type: object
+    list:
+      collapsible:
+        collapsed: false
+        summary: '{caption}'
+    fields:
+    - name: image
+      label: Photo
+      type: image
+    - name: caption
+      label: Caption
+      type: string
+    - name: category
+      label: Filter category
+      type: select
+      options:
+        values:
+        - name: rolling
+          label: Rolling
+        - name: static
+          label: Static
+        - name: details
+          label: Details
+        - name: events
+          label: Events
+    - name: size
+      label: Tile size
+      type: select
+      options:
+        values:
+        - name: normal
+          label: Normal
+        - name: wide
+          label: Wide (2 columns)
+        - name: tall
+          label: Tall (2 rows)
