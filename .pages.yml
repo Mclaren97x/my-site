@@ -48,11 +48,44 @@ content:
           - { name: text, label: Text, type: string }
 
       - name: gallery
-        label: Gallery
+        label: Home page gallery (highlights)
         type: object
         fields:
           - { name: eyebrow, label: Small label, type: string }
           - { name: heading, label: Heading, type: string }
+          - name: photos
+            label: Photos
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Photo, type: image }
+              - { name: caption, label: Caption, type: string }
+              - name: category
+                label: Filter category
+                type: select
+                options:
+                  values:
+                    - { name: rolling, label: Rolling }
+                    - { name: static, label: Static }
+                    - { name: details, label: Details }
+                    - { name: events, label: Events }
+              - name: size
+                label: Tile size
+                type: select
+                options:
+                  values:
+                    - { name: normal, label: Normal }
+                    - { name: wide, label: Wide (2 columns) }
+                    - { name: tall, label: Tall (2 rows) }
+
+      - name: portfolio
+        label: Portfolio page
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: string }
+          - { name: heading, label: Heading, type: string }
+          - { name: intro, label: Intro text, type: text }
+          - { name: home_button, label: Home page button text (under the gallery), type: string }
           - name: photos
             label: Photos
             type: object
@@ -153,12 +186,9 @@ content:
                     - { name: plus, label: Plus sign }
           - { name: notes_heading, label: Notes heading, type: string }
           - { name: notes, label: Notes, type: text, list: true }
-          - { name: cta_heading, label: Bottom heading, type: string }
-          - { name: cta_text, label: Bottom text, type: text }
-          - { name: cta_button, label: Bottom button text, type: string }
 
       - name: contact
-        label: Contact / booking
+        label: Booking & contact (bottom of the Packages page)
         type: object
         fields:
           - { name: eyebrow, label: Small label, type: string }

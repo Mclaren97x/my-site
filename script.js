@@ -96,6 +96,11 @@ document.addEventListener("keydown", (e) => {
 });
 }
 
+// ---------- Old links to the home page's booking section now go to the Packages page ----------
+if (!form && location.hash === "#contact") {
+  location.replace(document.querySelector(".logo").getAttribute("href") + "packages/#book");
+}
+
 // ---------- Contact form (emails each booking to CONTACT_EMAIL) ----------
 if (form) {
 // "Book this package" links arrive as /?package=Name#contact: preselect that shoot type.
@@ -104,6 +109,19 @@ if (requested) {
   const opt = [...form.type.options].find((o) => o.value.toLowerCase() === requested.toLowerCase());
   if (opt) form.type.value = opt.value;
 }
+
+// "Book this package" buttons on the same page: pick the package and scroll down without reloading.
+document.querySelectorAll("[data-package]").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const opt = [...form.type.options].find((o) => o.value.toLowerCase() === btn.dataset.package.toLowerCase());
+    if (!opt) return; // let the link navigate normally
+    e.preventDefault();
+    form.type.value = opt.value;
+    history.replaceState(null, "", btn.getAttribute("href"));
+    document.getElementById("book").scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => form.name.focus({ preventScroll: true }), 600);
+  });
+});
 
 const submitBtn = form.querySelector('button[type="submit"]');
 const statusEl = document.getElementById("form-status");
