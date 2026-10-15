@@ -930,3 +930,12 @@ h1, h2, h3 {
   border-left: 3px solid var(--accent);
   padding-left: 24px;
 }
+
+/* UTMedia application form */
+.utm-apply .section-head { text-align: center; }
+.utm-apply .section-head .eyebrow { justify-content: center; }
+.utm-apply .section-sub { margin-left: auto; margin-right: auto; }
+.utm-form { max-width: 640px; margin: 0 auto; grid-template-columns: 1fr; }
+.utm-form .btn { justify-self: center; }
+.utm-alt-link { text-align: center; margin: 24px 0 0; }
+.utm-alt-link a { color: var(--accent); }

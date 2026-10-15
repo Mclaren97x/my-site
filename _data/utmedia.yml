@@ -1,6 +1,7 @@
 nav_label: UTMedia
 seo_title: UTMedia
-seo_description: UTMedia is a community built for photographers, by photographers, across the state of Utah.
+seo_description: UTMedia is a community built for photographers, by photographers, across the state of
+  Utah.
 banner: /images/salt-flats-sunset.jpg
 eyebrow: Community
 heading: UTMedia
@@ -27,7 +28,21 @@ showcase_heading: From the community
 showcase_intro: ''
 showcase:
   photos: []
-join_heading: Get involved
-join_text: Interested in joining UTMedia? Details on how to get involved are coming soon.
-join_button: Join UTMedia
+join_heading: Join UTMedia
+join_text: Want in? Fill out the short application below and we'll be in touch.
+join_button: Apply to join
 join_link: ''
+application:
+  eyebrow: Apply
+  email: speedofphotography@gmail.com
+  email_subject: New UTMedia application
+  name_label: Name
+  socials_label: Social media handle(s)
+  socials_placeholder: '@yourhandle on Instagram, TikTok, etc.'
+  why_label: Why do you want to join?
+  why_placeholder: A sentence or two is plenty.
+  sending: Sending...
+  success: Thanks for applying! We'll be in touch.
+  error: Sorry, that didn't go through.
+  error_link: Email your application instead.
+  alt_link_text: Or join here

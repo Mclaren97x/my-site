@@ -72,10 +72,37 @@ permalink: /utmedia/
   </div>
     {%- endif %}
 
-    <section class="section cta-band{% if shared.size > 0 %} section-alt{% endif %}">
-      <h2>{{ u.join_heading | escape }}</h2>
-      {%- if u.join_text and u.join_text != "" %}<p class="section-sub">{{ u.join_text | escape }}</p>{% endif %}
+    {%- assign af = u.application %}
+    <section id="apply" class="section utm-apply{% if shared.size > 0 %} section-alt{% endif %}" aria-labelledby="utm-apply-heading">
+      <div class="section-head">
+        <p class="eyebrow">{{ af.eyebrow | default: "Apply" | escape }}</p>
+        <h2 id="utm-apply-heading">{{ u.join_heading | default: "Join UTMedia" | escape }}</h2>
+        {%- if u.join_text and u.join_text != "" %}<p class="section-sub">{{ u.join_text | escape }}</p>{% endif %}
+      </div>
+      <form class="contact-form utm-form" id="utm-form"
+            data-email="{{ af.email | default: site.data.content.contact.email | escape }}"
+            data-subject="{{ af.email_subject | default: "New UTMedia application" | escape }}"
+            data-sending="{{ af.sending | default: "Sending..." | escape }}"
+            data-success="{{ af.success | default: "Thanks for applying! We'll be in touch." | escape }}"
+            data-error="{{ af.error | default: "Sorry, that didn't go through." | escape }}"
+            data-error-link="{{ af.error_link | default: "Email your application instead." | escape }}">
+        <div class="field field-full">
+          <label for="utm-name">{{ af.name_label | default: "Name" | escape }}</label>
+          <input id="utm-name" name="name" type="text" autocomplete="name" required maxlength="120">
+        </div>
+        <div class="field field-full">
+          <label for="utm-socials">{{ af.socials_label | default: "Social media handle(s)" | escape }}</label>
+          <input id="utm-socials" name="socials" type="text" required maxlength="300" placeholder="{{ af.socials_placeholder | default: "@yourhandle on Instagram, TikTok, etc." | escape }}">
+        </div>
+        <div class="field field-full">
+          <label for="utm-why">{{ af.why_label | default: "Why do you want to join?" | escape }}</label>
+          <textarea id="utm-why" name="why" rows="4" required maxlength="1000" placeholder="{{ af.why_placeholder | default: "A sentence or two is plenty." | escape }}"></textarea>
+        </div>
+        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn-primary field-full" data-label="{{ u.join_button | default: "Apply to join" | escape }}">{{ u.join_button | default: "Apply to join" | escape }}</button>
+        <p class="form-status field-full" role="status" aria-live="polite"></p>
+      </form>
       {%- if u.join_link and u.join_link != "" %}
-      <a href="{{ u.join_link | escape }}" class="btn btn-primary"{% unless u.join_link contains "speedofphotography.github.io" %} target="_blank" rel="noopener"{% endunless %}>{{ u.join_button | default: "Join UTMedia" | escape }}</a>
+      <p class="utm-alt-link"><a href="{{ u.join_link | escape }}" target="_blank" rel="noopener">{{ af.alt_link_text | default: "Or join here" | escape }} &rarr;</a></p>
       {%- endif %}
     </section>

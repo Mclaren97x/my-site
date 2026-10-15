@@ -651,14 +651,57 @@ content:
           - name: tall
             label: Tall (2 rows)
   - name: join_heading
-    label: 'Bottom section: heading'
+    label: 'Application section: heading'
     type: string
   - name: join_text
-    label: 'Bottom section: text'
+    label: 'Application section: intro text'
     type: text
   - name: join_button
-    label: 'Bottom section: button text'
+    label: 'Application form: submit button text'
     type: string
   - name: join_link
-    label: 'Bottom section: button link (button hidden until set)'
+    label: Optional extra join link shown under the form (e.g. a Discord invite)
     type: string
+  - name: application
+    label: Application form wording & delivery
+    type: object
+    fields:
+    - name: eyebrow
+      label: Small label above the heading
+      type: string
+    - name: email
+      label: Send applications to this email
+      type: string
+    - name: email_subject
+      label: Email subject (applicant's name is added)
+      type: string
+    - name: name_label
+      label: Name label
+      type: string
+    - name: socials_label
+      label: Social handles label
+      type: string
+    - name: socials_placeholder
+      label: Social handles example text
+      type: string
+    - name: why_label
+      label: '''Why join'' label'
+      type: string
+    - name: why_placeholder
+      label: '''Why join'' example text'
+      type: string
+    - name: sending
+      label: Button text while sending
+      type: string
+    - name: success
+      label: Message after applying
+      type: text
+    - name: error
+      label: Message if sending fails
+      type: string
+    - name: error_link
+      label: Email link text if sending fails
+      type: string
+    - name: alt_link_text
+      label: Text for the optional extra join link
+      type: string

@@ -187,7 +187,7 @@ form.addEventListener("submit", async (e) => {
 }
 
 // ---------- Reveal sections on scroll ----------
-const revealTargets = document.querySelectorAll(".section-head, .gallery, .service, .process li, .about-photo, .about-text, .contact-info, .contact-form, .package, .addon, .notes, .location");
+const revealTargets = document.querySelectorAll(".section-head, .gallery, .service, .process li, .about-photo, .about-text, .contact-info, .contact-form, .package, .addon, .notes, .location, .utm-form");
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -219,3 +219,52 @@ document.querySelectorAll(".location-media").forEach((media) => {
     });
   });
 });
+
+// ---------- UTMedia application form (emailed via FormSubmit, like bookings) ----------
+const utmForm = document.getElementById("utm-form");
+if (utmForm) {
+  const btn = utmForm.querySelector('button[type="submit"]');
+  const status = utmForm.querySelector(".form-status");
+  utmForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(utmForm);
+    if (data.get("_honey")) return; // filled in by spam bots only
+    const ds = utmForm.dataset;
+    const name = (data.get("name") || "").trim();
+    const payload = {
+      name,
+      social_handles: (data.get("socials") || "").trim(),
+      why_they_want_to_join: (data.get("why") || "").trim(),
+      _subject: `${ds.subject}: ${name}`,
+      _template: "table",
+    };
+    btn.disabled = true;
+    btn.textContent = ds.sending;
+    status.className = "form-status";
+    status.textContent = "";
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${ds.email}`, {
+        method: "POST",
+        referrerPolicy: "origin", // one FormSubmit activation covers every page
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok || String(result.success) === "false") throw new Error(result.message || res.statusText);
+      utmForm.reset();
+      status.className = "form-status is-success";
+      status.textContent = ds.success;
+    } catch (err) {
+      const body = `Name: ${payload.name}\nSocial handles: ${payload.social_handles}\n\nWhy I want to join:\n${payload.why_they_want_to_join}`;
+      status.className = "form-status is-error";
+      status.textContent = ds.error + " ";
+      const link = document.createElement("a");
+      link.href = `mailto:${ds.email}?subject=${encodeURIComponent(payload._subject)}&body=${encodeURIComponent(body)}`;
+      link.textContent = ds.errorLink;
+      status.append(link);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = btn.dataset.label;
+    }
+  });
+}
