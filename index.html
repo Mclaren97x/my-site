@@ -15,7 +15,7 @@ layout: default
           <a href="#work" class="btn btn-ghost">{{ c.hero.secondary_button | escape }}</a>
         </div>
       </div>
-      <a href="#work" class="scroll-cue" aria-label="Scroll to work"><span></span></a>
+      <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
     </section>
 
     <section class="strip" aria-label="Highlights">
@@ -24,7 +24,21 @@ layout: default
       {%- endfor %}
     </section>
 
-    <section id="work" class="section">
+    <section id="about" class="section about">
+      {%- if c.about.photo and c.about.photo != "" %}
+      <img class="about-photo" src="{{ base }}{{ c.about.photo }}" alt="The photographer behind {{ c.business_name | escape }}" loading="lazy">
+      {%- endif %}
+      <div class="about-text">
+        <p class="eyebrow">{{ c.about.eyebrow | escape }}</p>
+        <h2>{{ c.about.heading | escape }}</h2>
+        {%- for para in c.about.paragraphs %}
+        <p>{{ para | escape }}</p>
+        {%- endfor %}
+        <a href="{{ base }}/packages/#book" class="btn btn-primary">{{ c.about.button | escape }}</a>
+      </div>
+    </section>
+
+    <section id="work" class="section section-alt">
       <div class="section-head">
         <p class="eyebrow">{{ c.gallery.eyebrow | escape }}</p>
         <h2>{{ c.gallery.heading | escape }}</h2>
@@ -52,7 +66,7 @@ layout: default
       </div>
     </section>
 
-    <section id="services" class="section section-alt">
+    <section id="services" class="section">
       <div class="section-head">
         <p class="eyebrow">{{ c.services.eyebrow | escape }}</p>
         <h2>{{ c.services.heading | escape }}</h2>
@@ -71,7 +85,7 @@ layout: default
       </div>
     </section>
 
-    <section id="process" class="section">
+    <section id="process" class="section section-alt">
       <div class="section-head">
         <p class="eyebrow">{{ c.process.eyebrow | escape }}</p>
         <h2>{{ c.process.heading | escape }}</h2>
@@ -83,19 +97,6 @@ layout: default
       </ol>
     </section>
 
-    <section id="about" class="section section-alt about">
-      {%- if c.about.photo and c.about.photo != "" %}
-      <img class="about-photo" src="{{ base }}{{ c.about.photo }}" alt="The photographer behind {{ c.business_name | escape }}" loading="lazy">
-      {%- endif %}
-      <div class="about-text">
-        <p class="eyebrow">{{ c.about.eyebrow | escape }}</p>
-        <h2>{{ c.about.heading | escape }}</h2>
-        {%- for para in c.about.paragraphs %}
-        <p>{{ para | escape }}</p>
-        {%- endfor %}
-        <a href="{{ base }}/packages/#book" class="btn btn-primary">{{ c.about.button | escape }}</a>
-      </div>
-    </section>
 
   <div class="lightbox" id="lightbox" hidden>
     <button class="lightbox-close" aria-label="Close">&times;</button>

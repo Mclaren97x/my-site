@@ -675,7 +675,8 @@ h1, h2, h3 {
 }
 
 /* ---------- Packages page ---------- */
-.nav-links a[aria-current="page"] { color: var(--accent); }
+.nav-links a[aria-current="page"]:not(.nav-cta) { color: var(--accent); }
+.nav-cta[aria-current="page"] { background: var(--accent); }
 .section-cta { margin-top: 40px; }
 
 .page-hero {
