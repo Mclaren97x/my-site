@@ -17,11 +17,42 @@ permalink: /utmedia/
       </div>
     </section>
 
-    {%- if u.intro and u.intro != "" %}
     <section class="section utm-intro">
+      {%- if u.intro and u.intro != "" %}
       <p class="utm-lead">{{ u.intro | escape }}</p>
+      {%- endif %}
+      {%- if u.sponsor.name and u.sponsor.name != "" %}
+      <p class="utm-sponsor">
+        <span>{{ u.sponsor.label | default: "Sponsored by" | escape }}</span>
+        {%- if u.sponsor.link and u.sponsor.link != "" %}
+        <a href="{{ u.sponsor.link | escape }}" target="_blank" rel="noopener">{{ u.sponsor.name | escape }} &rarr;</a>
+        {%- else %}
+        <strong>{{ u.sponsor.name | escape }}</strong>
+        {%- endif %}
+      </p>
+      {%- endif %}
+      {%- for para in u.about_paragraphs %}{% if para and para != "" %}
+      <p class="utm-para">{{ para | escape }}</p>
+      {%- endif %}{% endfor %}
+      {%- if u.platforms.size > 0 %}
+      {%- if u.platforms_heading and u.platforms_heading != "" %}<h2 class="utm-subhead">{{ u.platforms_heading | escape }}</h2>{% endif %}
+      <div class="utm-platforms">
+        {%- for pf in u.platforms %}
+        <div class="contact-card utm-platform">
+          {%- case pf.icon -%}
+          {%- when "instagram" -%}<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+          {%- when "discord" -%}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 7.5c3-1.3 6-1.3 9 0M7.5 16.5c3 1.3 6 1.3 9 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 6.5 6 7c-1.6 2.6-2.3 5.4-2 8.6 1.4 1.2 2.9 1.9 4.4 2.4l.9-1.8M16 6.5l2 .5c1.6 2.6 2.3 5.4 2 8.6-1.4 1.2-2.9 1.9-4.4 2.4l-.9-1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="9.5" cy="12.5" r="1.3" fill="currentColor"/><circle cx="14.5" cy="12.5" r="1.3" fill="currentColor"/></svg>
+          {%- else -%}<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          {%- endcase -%}
+          <span>
+            <strong>{{ pf.title | escape }}</strong>
+            <small class="utm-platform-text">{{ pf.text | escape }}</small>
+          </span>
+        </div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
     </section>
-    {%- endif %}
 
     {%- if u.pillars.size > 0 %}
     <section class="section section-alt" aria-labelledby="utm-pillars-heading">

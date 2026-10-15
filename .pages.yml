@@ -577,6 +577,51 @@ content:
   - name: intro
     label: Intro paragraph
     type: text
+  - name: sponsor
+    label: Sponsor
+    type: object
+    fields:
+    - name: label
+      label: Text before the name (e.g. Sponsored by)
+      type: string
+    - name: name
+      label: Sponsor name
+      type: string
+    - name: link
+      label: Sponsor website
+      type: string
+  - name: about_paragraphs
+    label: More about UTMedia (paragraphs under the intro)
+    type: text
+    list: true
+  - name: platforms_heading
+    label: '''Where we meet'' heading'
+    type: string
+  - name: platforms
+    label: Where we meet (cards)
+    type: object
+    list:
+      collapsible:
+        collapsed: false
+        summary: '{title}'
+    fields:
+    - name: icon
+      label: Icon
+      type: select
+      options:
+        values:
+        - name: instagram
+          label: Instagram
+        - name: discord
+          label: Discord
+        - name: other
+          label: Circle
+    - name: title
+      label: Title
+      type: string
+    - name: text
+      label: Text
+      type: text
   - name: pillars_eyebrow
     label: 'Cards section: small label'
     type: string
